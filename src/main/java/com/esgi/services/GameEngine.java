@@ -7,11 +7,9 @@ import com.esgi.models.Island;
 
 public class GameEngine {
 
-    Game game;
+    private Game game;
 
-    Calamity calamity;
-
-    Save save;
+    private Save save;
 
     public GameEngine(){
         save = new Save();
@@ -28,12 +26,5 @@ public class GameEngine {
 
     public void saveGame(){
         save.saveGame(game);
-    }
-
-    public void setCalamity(){
-        int time = game.addSeason();
-        do{
-            calamity = DataService.getInstance().getCalamity().isSeason(SeasonType.valueOf(time));
-        }while (calamity == null);
     }
 }

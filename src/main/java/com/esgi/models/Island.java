@@ -1,12 +1,16 @@
 package com.esgi.models;
 
-import java.util.ArrayList;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.ArrayList;
+import java.util.List;
+
+@JsonIgnoreProperties({ "accumulation", "accumulationMax" })
 public class Island {
 
-    private final String islandName;
-    private final String dictatorName;
-    private final String citizensName;
+    private String islandName;
+    private String dictatorName;
+    private String citizensName;
     private int agriculture;
     private int stockFood;
     private int industry;
@@ -14,6 +18,11 @@ public class Island {
     private int score;
     private float globalSatisfaction;
     private ArrayList<Faction> factions;
+
+    public Island()
+    {
+        super();
+    }
 
     //new game Construct
     public Island(String islandName, String dictatorName, String citizensName, int agriculture, int stockFood, int industry, int treasury, float globalSatisfaction) {
@@ -155,4 +164,5 @@ public class Island {
 
         this.globalSatisfaction = satisfaction/globalSupporter;
     }
+
 }

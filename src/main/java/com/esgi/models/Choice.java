@@ -3,8 +3,13 @@ package com.esgi.models;
 import java.util.ArrayList;
 
 public class Choice {
-    private final String description;
+    private String description;
     private ArrayList<Effect> effects;
+
+    public Choice()
+    {
+        super();
+    }
 
     public Choice(String description){
         this.description = description;

@@ -1,10 +1,14 @@
 module com.esgi {
     requires javafx.controls;
     requires javafx.fxml;
-    requires org.json;
-    requires jackson.core.asl;
-    requires jackson.mapper.asl;
-
+    requires com.fasterxml.jackson.core;
+    requires com.fasterxml.jackson.databind;
+    requires com.fasterxml.jackson.annotation;
     opens com.esgi to javafx.fxml;
     exports com.esgi;
+    exports com.esgi.models;
+    exports com.esgi.models.Calamities;
+
+    opens com.esgi.models;
+    opens com.esgi.models.Calamities;
 }

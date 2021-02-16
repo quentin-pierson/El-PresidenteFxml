@@ -1,21 +1,25 @@
 package com.esgi.models;
-import org.codehaus.jackson.type.TypeReference;
-import org.json.*;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import org.codehaus.jackson.JsonGenerationException;
-import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;
 
 public class Save {
     private ArrayList<Game> games;
-    private final String path = "./data/save.json";
+    private final String path = "save.json";
 
     public Save(){
         ObjectMapper mapper = new ObjectMapper();
+        mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
+
         try{
             games = mapper.readValue(new File(path), new TypeReference<ArrayList<Game>>(){});
 
@@ -26,14 +30,18 @@ public class Save {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        if(games == null) games = new ArrayList<Game>();
     }
 
     public void saveGame(Game game){
         ObjectMapper mapper = new ObjectMapper();
+        mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
+
         games.add(game);
 
         try {
-        mapper.writeValue(new File(path), games);
+            mapper.writerWithDefaultPrettyPrinter().writeValue(new File(path), games);
+
         } catch (JsonGenerationException e) {
             e.printStackTrace();
         } catch (JsonMappingException e) {
