@@ -1,5 +1,6 @@
 package com.esgi;
 
+import com.esgi.services.GameEngine;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,6 +20,9 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("primary"));
         stage.setScene(scene);
+        GameEngine gameEngine = new GameEngine();
+        gameEngine.initGame();
+        gameEngine.saveGame();
         stage.show();
     }
 

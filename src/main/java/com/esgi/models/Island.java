@@ -7,8 +7,6 @@ public class Island {
     private final String islandName;
     private final String dictatorName;
     private final String citizensName;
-    private int season;
-    private final int difficulty;
     private int agriculture;
     private int stockFood;
     private int industry;
@@ -17,12 +15,11 @@ public class Island {
     private float globalSatisfaction;
     private ArrayList<Faction> factions;
 
-    public Island(String islandName, String dictatorName, String citizensName, int season, int difficulty, int agriculture, int stockFood, int industry, int treasury, float globalSatisfaction) {
+    //new game Construct
+    public Island(String islandName, String dictatorName, String citizensName, int agriculture, int stockFood, int industry, int treasury, float globalSatisfaction) {
         this.islandName = islandName;
         this.dictatorName = dictatorName;
         this.citizensName = citizensName;
-        this.season = season;
-        this.difficulty = difficulty;
 
         this.agriculture = agriculture;
         this.industry = industry;
@@ -35,12 +32,11 @@ public class Island {
         factions = new ArrayList<Faction>();
     }
 
-    public Island(String islandName, String dictatorName, String citizensName, int season, int difficulty, int agriculture, int stockFood, int industry, int treasury, int score, float globalSatisfaction) {
+    //load game Construct
+    public Island(String islandName, String dictatorName, String citizensName, int agriculture, int stockFood, int industry, int treasury, int score, float globalSatisfaction, ArrayList<Faction> factions) {
         this.islandName = islandName;
         this.dictatorName = dictatorName;
         this.citizensName = citizensName;
-        this.season = season;
-        this.difficulty = difficulty;
 
         this.agriculture = agriculture;
         this.industry = industry;
@@ -50,7 +46,7 @@ public class Island {
         this.score = score;
         this.globalSatisfaction = globalSatisfaction;
 
-        factions = new ArrayList<Faction>();
+        this.factions = factions;
     }
 
     public String getIslandName() {
@@ -63,23 +59,6 @@ public class Island {
 
     public String getCitizensName() {
         return citizensName;
-    }
-
-    public int getSeason() {
-        return season;
-    }
-
-    public int addSeason() {
-        this.season+=1;
-        if(this.season == 4){
-            this.season = 0;
-            score ++;
-        }
-        return season;
-    }
-
-    public int getDifficulty() {
-        return difficulty;
     }
 
     public int getAgriculture() {
@@ -102,12 +81,32 @@ public class Island {
         return agriculture+industry;
     }
 
+    private int removeAccumulation(){
+        verifyAccumulation();
+
+        int accumulation = getAccumulation() - 100;
+
+        return accumulation;
+    }
+
+    private void verifyAccumulation(){
+        if(agriculture > 100){
+            agriculture =100;
+        }else if(industry > 100){
+            industry = 100;
+        }
+    }
+
     public boolean isAccumulationMax(){
         if(getAccumulation() > 100){
             return true;
         }else{
             return false;
         }
+    }
+
+    public void addScore(){
+        score += 1;
     }
 
     public int getTreasury() {
@@ -126,12 +125,12 @@ public class Island {
         if(nationType == NationType.agriculture){
             agriculture += value;
             if(isAccumulationMax()){
-                industry -= value;
+                industry -= removeAccumulation();
             }
         }else if(nationType == NationType.industry){
             industry += value;
             if(isAccumulationMax()){
-                agriculture -= value;
+                agriculture -= removeAccumulation();
             }
         }else if(nationType == NationType.treasury){
             treasury += value;
