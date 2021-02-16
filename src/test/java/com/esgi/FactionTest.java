@@ -1,3 +1,4 @@
+package com.esgi;
 
 import com.esgi.models.Faction;
 import com.esgi.models.NationType;
