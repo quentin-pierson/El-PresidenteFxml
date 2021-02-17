@@ -1,10 +1,7 @@
 package com.esgi.services;
-import com.esgi.models.Parameter;
-import com.esgi.models.Save;
+import com.esgi.models.*;
 import com.esgi.models.Calamities.Calamity;
 import com.esgi.models.Calamities.SeasonType;
-import com.esgi.models.Game;
-import com.esgi.models.Island;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -25,7 +22,7 @@ public class GameEngine {
     }
 
     public void createGame(){
-        game = new Game();
+        game = new Game(GameType.singlePlayer);
         Parameter parameter = new Parameter();
 
         game.setParameter(parameter);

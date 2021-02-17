@@ -14,10 +14,12 @@ public class Game {
     private int totalSeason;
     private ArrayList<Island> islands;
     private Calamity calamity;
+    private GameType gameType;
     private Parameter parameter;
 
-    public Game() {
+    public Game(GameType gameType) {
         super();
+        this.gameType = gameType;
         this.season = -1;
         islands = new ArrayList<Island>();
     }
