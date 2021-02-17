@@ -25,6 +25,11 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Slider fx:id="volumeSlider" layoutX="223.0" layoutY="243.0" prefHeight="14.0" prefWidth="306.0" />
+      <Slider fx:id="volumeSlider" layoutX="220.0" layoutY="215.0" prefHeight="14.0" prefWidth="306.0" />
+      <Text fill="WHITE" layoutX="220.0" layoutY="200.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.5" text="Sound">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

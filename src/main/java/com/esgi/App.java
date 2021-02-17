@@ -24,8 +24,8 @@ import java.nio.file.Paths;
 public class App extends Application {
 
     private static Scene scene;
-    private GameEngine gameEngine;
-    MediaPlayer mediaPlayer;
+    private static GameEngine gameEngine;
+    private static MediaPlayer mediaPlayer;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -59,7 +59,14 @@ public class App extends Application {
         Media h = new Media(new File(pathMusic).toURI().toString());
         mediaPlayer = new MediaPlayer(h);
         mediaPlayer.setCycleCount(mediaPlayer.INDEFINITE);
-        //mediaPlayer.setVolume(0.5d);
         mediaPlayer.play();
+    }
+
+    public static GameEngine getGameEngine() {
+        return gameEngine;
+    }
+
+    public static MediaPlayer getMediaPlayer() {
+        return mediaPlayer;
     }
 }
