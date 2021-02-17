@@ -26,18 +26,6 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
-<<<<<<< HEAD
-
-        <!-- https://mvnrepository.com/artifact/org.json/json -->
-        <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>20201115</version>
-        </dependency>
-
-
-=======
->>>>>>> 33837fd2ef69885bc562e761b3fad21be773a80c
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>

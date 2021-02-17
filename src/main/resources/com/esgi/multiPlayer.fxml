@@ -8,29 +8,29 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esgi.PlayController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esgi.MultiplayerController">
    <children>
       <ImageView fitHeight="401.0" fitWidth="602.0" opacity="0.75">
          <image>
             <Image url="@image/background.jpg" />
          </image>
       </ImageView>
-      <Text layoutX="212.0" layoutY="68.0" text="El Presidente" textAlignment="CENTER">
+      <Text layoutX="240.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Multiplayer" wrappingWidth="159.8505859375">
          <font>
             <Font name="Impact" size="25.0" />
          </font>
       </Text>
-      <Button fx:id="buttonSinglePlayer" layoutX="242.0" layoutY="145.0" mnemonicParsing="false" onAction="#switchToSinglePlayer" prefHeight="31.0" prefWidth="108.0" text="Singleplayer">
+      <Button fx:id="buttonCreateGame" layoutX="246.0" layoutY="155.0" mnemonicParsing="false" text="Create Game">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="buttonMultiPlayer" layoutX="241.0" layoutY="188.0" mnemonicParsing="false" onAction="#switchToMultiPlayer" prefHeight="31.0" prefWidth="108.0" text="Multiplayer">
+      <Button fx:id="buttonJoinGame" layoutX="246.0" layoutY="201.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="106.0" text="Join Game">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="buttonBack" layoutX="241.0" layoutY="226.0" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="31.0" prefWidth="108.0" text="Back">
+      <Button fx:id="buttonBack" layoutX="246.0" layoutY="240.0" mnemonicParsing="false" onAction="#switchToPlay" prefHeight="31.0" prefWidth="106.0" text="Back">
          <font>
             <Font size="15.0" />
          </font>

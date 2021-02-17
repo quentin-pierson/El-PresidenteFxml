@@ -14,11 +14,7 @@ import java.util.ArrayList;
 
 public class Save {
     private ArrayList<Game> games;
-<<<<<<< HEAD
-    private final String path = "/data/save.json";
-=======
     private final String path = "save.json";
->>>>>>> 33837fd2ef69885bc562e761b3fad21be773a80c
 
     public Save(){
         ObjectMapper mapper = new ObjectMapper();

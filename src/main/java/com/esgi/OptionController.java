@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 public class OptionController {
 
     @FXML
-    private void switchToOption() throws IOException {
-        App.setRoot("primary");
+    private void switchToMenu() throws IOException {
+        App.setRoot("menu");
     }
 }
