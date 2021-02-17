@@ -15,8 +15,11 @@ public class GameEngine {
         save = new Save();
     }
 
+    public void createGame(){
+        game = new Game();
+    }
+
     public void initGame(){
-        game = new Game(0);
         Island island = new Island("islandos","dictator","islander",10,15,10,15,50);
         game.addIsland(island);
     }

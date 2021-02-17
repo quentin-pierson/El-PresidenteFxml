@@ -21,6 +21,11 @@ public class App extends Application {
         scene = new Scene(loadFXML("primary"));
         stage.setScene(scene);
         stage.show();
+
+        GameEngine gameEngine = new GameEngine();
+        gameEngine.createGame();
+        gameEngine.initGame();
+        gameEngine.saveGame();
     }
 
     static void setRoot(String fxml) throws IOException {
@@ -33,9 +38,6 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        GameEngine gameEngine = new GameEngine();
-        gameEngine.initGame();
-        gameEngine.saveGame();
         launch();
     }
 
