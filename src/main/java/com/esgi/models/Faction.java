@@ -50,6 +50,8 @@ public class Faction {
 
             if(this.satisfaction < 0){
                 this.satisfaction = 0;
+            }else if(this.satisfaction > 100){
+                this.satisfaction = 100;
             }
         }
     }

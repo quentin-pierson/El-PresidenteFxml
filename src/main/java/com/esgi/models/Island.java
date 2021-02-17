@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @JsonIgnoreProperties({ "accumulation", "accumulationMax", "citizen"})
 public class Island {
@@ -131,8 +132,70 @@ public class Island {
         treasury += industry * 10;
         stockFood += agriculture * 40;
         stockFood -= getCitizen() * 4;
+
+        if(stockFood < 0){
+            killCitizen();
+        }else{
+            growCitizen();
+        }
     }
 
+    private void killCitizen(){
+        Random random = new Random();
+        int citizenKilled = 0;
+        while(stockFood < 0){
+            int rnd = random.nextInt(factions.size());
+            factions.get(rnd).addSupporter(-1);
+            citizenKilled++;
+            stockFood+=4;
+        }
+
+        int satisfactionDown = -2 * citizenKilled;
+
+        for (Faction faction: factions) {
+            faction.addSatisfaction(satisfactionDown);
+        }
+
+        stockFood = 0;
+    }
+
+    //FAIRE UN ALGO POUR QUE CA NE SOIT PAS ALEATOIRE
+    private void growCitizen(){
+        Random random = new Random();
+        int percentCitizenTotal = random.nextInt(10) + 101;
+
+        int newCitizen = getCitizen() * percentCitizenTotal /100;
+
+        while(stockFood < 0){
+            int rnd = random.nextInt(factions.size());
+            int supporter = random.nextInt(newCitizen) + 1;
+
+            factions.get(rnd).addSupporter(supporter);
+            newCitizen -= supporter;
+        }
+    }
+
+    public void buyFood(){
+        if(treasury >= 8){
+            stockFood += 1;
+            treasury -= 8;
+        }
+    }
+
+    private void Corruption(int factionId){
+        Faction faction = factions.get(factionId);
+        Faction loyalist = factions.stream().filter(f -> f.getFactionType() == NationType.loyalist).findFirst().orElse(null);
+
+        int totalPrice = faction.getSupporter() * 15;
+        if(treasury >= totalPrice){
+            faction.addSatisfaction(10);
+
+            int loyalistSatisfaction = totalPrice /10;
+
+            loyalist.addSatisfaction(-loyalistSatisfaction);
+            treasury -= totalPrice;
+        }
+    }
 
     public int getCitizen(){
         int citizen = 0;
