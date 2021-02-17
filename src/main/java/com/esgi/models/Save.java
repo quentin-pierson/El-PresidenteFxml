@@ -50,4 +50,8 @@ public class Save {
     public int numberSave(){
         return games.size();
     }
+
+    public ArrayList<Game> getGames() {
+        return games;
+    }
 }

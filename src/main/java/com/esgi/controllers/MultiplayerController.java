@@ -1,4 +1,4 @@
-package com.esgi.Controller;
+package com.esgi.controllers;
 
 import com.esgi.App;
 import javafx.fxml.FXML;

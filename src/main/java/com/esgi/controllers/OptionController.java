@@ -1,8 +1,7 @@
-package com.esgi.Controller;
+package com.esgi.controllers;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.esgi.App;
@@ -11,7 +10,6 @@ import javafx.beans.Observable;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Slider;
-import javafx.scene.media.MediaPlayer;
 
 
 public class OptionController implements Initializable {

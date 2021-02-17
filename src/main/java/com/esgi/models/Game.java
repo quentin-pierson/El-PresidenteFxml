@@ -97,4 +97,9 @@ public class Game {
             }
         }
     }
+
+    @Override
+    public String toString() {
+        return " " + id  + " " + islands.get(0).getIslandName() + " Difficulty: " + parameter.getDifficulty() + " Total Season: " + totalSeason;
+    }
 }

@@ -1,22 +1,16 @@
 package com.esgi;
 
-import com.esgi.Controller.OptionController;
 import com.esgi.services.GameEngine;
 import javafx.application.Application;
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Slider;
 import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Paths;
 
 /**
  * JavaFX App
@@ -35,9 +29,6 @@ public class App extends Application {
         stage.setScene(scene);
         stage.show();
         gameEngine = new GameEngine();
-        gameEngine.createGame();
-        gameEngine.initGame();
-        gameEngine.saveGame();
         playMusic();
     }
 

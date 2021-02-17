@@ -1,4 +1,4 @@
-package com.esgi.Controller;
+package com.esgi.controllers;
 
 import com.esgi.App;
 import javafx.fxml.FXML;
@@ -16,4 +16,10 @@ public class PlayController {
     private void switchToMultiPlayer() throws IOException {
         App.setRoot("multiPlayer");
     }
+
+    @FXML
+    private void switchToCareer() throws IOException {
+        App.setRoot("loadGame");
+    }
+
 }

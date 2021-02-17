@@ -14,5 +14,5 @@ module com.esgi {
     opens com.esgi.models;
     opens com.esgi.models.Calamities;
     opens com.esgi.sound;
-    opens com.esgi.Controller;
+    opens com.esgi.controllers;
 }

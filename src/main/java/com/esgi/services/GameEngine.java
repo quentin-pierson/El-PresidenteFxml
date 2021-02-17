@@ -71,4 +71,8 @@ public class GameEngine {
     public void saveGame(){
         save.saveGame(game);
     }
+
+    public Save getSave() {
+        return save;
+    }
 }

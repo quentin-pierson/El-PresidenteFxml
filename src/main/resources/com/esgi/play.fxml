@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="500.0" prefWidth="800.0" stylesheets="@css/application.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esgi.Controller.PlayController">
+<AnchorPane prefHeight="500.0" prefWidth="800.0" stylesheets="@css/application.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esgi.controllers.PlayController">
    <children>
       <ImageView fitHeight="500.0" fitWidth="800.0" opacity="0.75">
          <image>
@@ -34,7 +34,7 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="buttonCareer" alignment="BOTTOM_LEFT" layoutX="180.0" layoutY="170.0" mnemonicParsing="false" prefHeight="197.0" prefWidth="110.0" stylesheets="@css/application.css" text="Career">
+      <Button fx:id="buttonCareer" alignment="BOTTOM_LEFT" layoutX="180.0" layoutY="170.0" mnemonicParsing="false" onAction="#switchToCareer" prefHeight="197.0" prefWidth="110.0" stylesheets="@css/application.css" text="Career">
          <font>
             <Font size="15.0" />
          </font>
