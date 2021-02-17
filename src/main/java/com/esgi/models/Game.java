@@ -98,8 +98,8 @@ public class Game {
         }
     }
 
-    @Override
-    public String toString() {
+
+    public String toMother() {
         return " " + id  + " " + islands.get(0).getIslandName() + " Difficulty: " + parameter.getDifficulty() + " Total Season: " + totalSeason;
     }
 }

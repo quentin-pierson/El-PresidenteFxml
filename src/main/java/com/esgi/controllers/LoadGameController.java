@@ -9,19 +9,19 @@ import javafx.scene.control.ListView;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class LoadGameController implements Initializable {
-    @FXML ListView<String> listViewGame = new ListView<String>();
+    @FXML ListView listViewGame = new ListView();
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //listViewGame.getItems().addAll(App.getGameEngine().getSave().getGames());
+        listViewGame.getItems().addAll(App.getList());
 
-        for (Game game: App.getGameEngine().getSave().getGames()) {
-            listViewGame.getItems().add(game.toString());
-        }
     }
+
 
     @FXML
     private void switchToPlay() throws IOException {

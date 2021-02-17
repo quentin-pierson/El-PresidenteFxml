@@ -1,5 +1,6 @@
 package com.esgi;
 
+import com.esgi.models.Game;
 import com.esgi.services.GameEngine;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -9,8 +10,10 @@ import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
+
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * JavaFX App
@@ -18,7 +21,7 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
-    private static GameEngine gameEngine;
+    private static GameEngine gameEngine = new GameEngine();
     private static MediaPlayer mediaPlayer;
 
     @Override
@@ -28,7 +31,7 @@ public class App extends Application {
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
-        gameEngine = new GameEngine();
+        //gameEngine = new GameEngine();
         playMusic();
     }
 
@@ -59,5 +62,13 @@ public class App extends Application {
 
     public static MediaPlayer getMediaPlayer() {
         return mediaPlayer;
+    }
+
+    public static ArrayList<String> getList(){
+        ArrayList<String> arrayList = new ArrayList<String>();
+        for (Game game: gameEngine.getSave().getGames()){
+            arrayList.add(game.toMother());
+        }
+        return arrayList;
     }
 }
