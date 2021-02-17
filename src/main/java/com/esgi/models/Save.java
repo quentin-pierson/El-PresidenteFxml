@@ -1,4 +1,5 @@
 package com.esgi.models;
+import com.esgi.services.DataManagement;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.core.JsonGenerationException;
@@ -20,35 +21,15 @@ public class Save {
         ObjectMapper mapper = new ObjectMapper();
         mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
 
-        try{
-            games = mapper.readValue(new File(path), new TypeReference<ArrayList<Game>>(){});
+        games = DataManagement.getInstance().deserializeList(path);
 
-        } catch (JsonGenerationException e) {
-            e.printStackTrace();
-        } catch (JsonMappingException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         if(games == null) games = new ArrayList<Game>();
     }
 
     public void saveGame(Game game){
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
-
         games.add(game);
 
-        try {
-            mapper.writerWithDefaultPrettyPrinter().writeValue(new File(path), games);
-
-        } catch (JsonGenerationException e) {
-            e.printStackTrace();
-        } catch (JsonMappingException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        DataManagement.getInstance().serialize(path, games);
     }
 
     public Game loadGame(int i){

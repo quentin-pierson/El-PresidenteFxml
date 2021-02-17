@@ -43,6 +43,8 @@ public class Calamity {
             return description;
         }
 
+        private Choice getChoice(int i){ return choices.get(i);}
+
         public Calamity isSeason(SeasonType seasonType){
             return this;
         }
