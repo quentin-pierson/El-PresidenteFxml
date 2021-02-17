@@ -7,26 +7,26 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esgi.MenuController">
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esgi.Controller.MenuController">
    <children>
-      <ImageView fitHeight="401.0" fitWidth="602.0" opacity="0.75">
+      <ImageView fitHeight="500.0" fitWidth="800.0" opacity="0.75">
          <image>
             <Image url="@image/background.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="buttonPlay" layoutX="263.0" layoutY="144.0" mnemonicParsing="false" onAction="#switchToPlay" prefHeight="31.0" prefWidth="77.0" text="Play">
+      <Button fx:id="buttonPlay" layoutX="360.0" layoutY="180.0" mnemonicParsing="false" onAction="#switchToPlay" prefHeight="30.0" prefWidth="77.0" text="Play">
          <font>
             <Font size="15.0" />
          </font></Button>
-      <Button fx:id="buttonSettings" layoutX="262.0" layoutY="185.0" mnemonicParsing="false" onAction="#switchToOption" prefHeight="31.0" prefWidth="77.0" text="Settings">
+      <Button fx:id="buttonSettings" layoutX="360.0" layoutY="230.0" mnemonicParsing="false" onAction="#switchToOption" prefHeight="30.0" prefWidth="77.0" text="Settings">
          <font>
             <Font size="15.0" />
          </font></Button>
-      <Button fx:id="buttonClose" layoutX="262.0" layoutY="227.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" prefHeight="31.0" prefWidth="77.0" text="Close">
+      <Button fx:id="buttonClose" layoutX="360.0" layoutY="280.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" prefHeight="30.0" prefWidth="77.0" text="Close">
          <font>
             <Font size="15.0" />
          </font></Button>
-      <Text layoutX="234.0" layoutY="101.0" text="El Presidente" textAlignment="CENTER">
+      <Text layoutX="333.0" layoutY="100.0" text="El Presidente" textAlignment="CENTER">
          <font>
             <Font name="Impact" size="25.0" />
          </font>

@@ -1,3 +1,24 @@
 .anchor {
     -fx-background-image:url("../image/background.jpg");
 }
+
+#buttonCareer{
+    -fx-background-image: url("../image/background.jpg");
+    -fx-background-size: 105 175;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position:top;
+}
+
+#buttonMultiPlayer{
+    -fx-background-image: url("../image/multiplayer.jpg");
+    -fx-background-size: 105 175;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position:top;
+}
+
+#buttonSandBox{
+    -fx-background-image: url("../image/sandbox.jpg");
+    -fx-background-size: 105 175;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position:top;
+}

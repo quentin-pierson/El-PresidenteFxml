@@ -1,5 +1,6 @@
-package com.esgi;
+package com.esgi.Controller;
 
+import com.esgi.App;
 import javafx.fxml.FXML;
 import java.io.IOException;
 
@@ -10,10 +11,6 @@ public class PlayController {
         App.setRoot("menu");
     }
 
-    @FXML
-    private void switchToSinglePlayer() throws IOException {
-        App.setRoot("singlePlayer");
-    }
 
     @FXML
     private void switchToMultiPlayer() throws IOException {

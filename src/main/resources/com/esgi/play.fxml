@@ -7,30 +7,34 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esgi.PlayController">
+<AnchorPane prefHeight="500.0" prefWidth="800.0" stylesheets="@css/application.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esgi.Controller.PlayController">
    <children>
-      <ImageView fitHeight="401.0" fitWidth="602.0" opacity="0.75">
+      <ImageView fitHeight="500.0" fitWidth="800.0" opacity="0.75">
          <image>
             <Image url="@image/background.jpg" />
          </image>
       </ImageView>
-      <Text layoutX="212.0" layoutY="68.0" text="El Presidente" textAlignment="CENTER">
+      <Text layoutX="333.0" layoutY="110.0" text="El Presidente" textAlignment="CENTER">
          <font>
             <Font name="Impact" size="25.0" />
          </font>
       </Text>
-      <Button fx:id="buttonSinglePlayer" layoutX="242.0" layoutY="145.0" mnemonicParsing="false" onAction="#switchToSinglePlayer" prefHeight="31.0" prefWidth="108.0" text="Singleplayer">
+      <Button fx:id="buttonMultiPlayer" alignment="BOTTOM_LEFT" layoutX="480.0" layoutY="170.0" mnemonicParsing="false" onAction="#switchToMultiPlayer" prefHeight="197.0" prefWidth="108.0" text="Multiplayer">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="buttonMultiPlayer" layoutX="241.0" layoutY="188.0" mnemonicParsing="false" onAction="#switchToMultiPlayer" prefHeight="31.0" prefWidth="108.0" text="Multiplayer">
+      <Button fx:id="buttonBack" layoutX="15.0" layoutY="455.0" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="30.0" prefWidth="110.0" text="Back">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="buttonBack" layoutX="241.0" layoutY="226.0" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="31.0" prefWidth="108.0" text="Back">
+      <Button fx:id="buttonSandBox" alignment="BOTTOM_LEFT" layoutX="330.0" layoutY="170.0" mnemonicParsing="false" prefHeight="197.0" prefWidth="110.0" text="SandBox">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonCareer" alignment="BOTTOM_LEFT" layoutX="180.0" layoutY="170.0" mnemonicParsing="false" prefHeight="197.0" prefWidth="110.0" stylesheets="@css/application.css" text="Career">
          <font>
             <Font size="15.0" />
          </font>

@@ -1,5 +1,6 @@
-package com.esgi;
+package com.esgi.Controller;
 
+import com.esgi.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

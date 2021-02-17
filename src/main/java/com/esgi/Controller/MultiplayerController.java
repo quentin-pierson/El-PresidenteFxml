@@ -1,5 +1,6 @@
-package com.esgi;
+package com.esgi.Controller;
 
+import com.esgi.App;
 import javafx.fxml.FXML;
 
 import java.io.IOException;
