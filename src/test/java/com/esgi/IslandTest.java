@@ -57,4 +57,29 @@ public class IslandTest {
         Assert.assertEquals(island.getAgriculture(), 100);
         Assert.assertEquals(island.getIndustry(), 0);
     }
+
+    @Test
+    public void corruption(){
+
+    }
+
+    @Test
+    public void corruption_with_no_treasury(){
+
+    }
+
+    @Test
+    public void buy_food(){
+
+    }
+
+    @Test
+    public void buy_food_with_no_treasury(){
+
+    }
+
+    @Test
+    public void kill_citizen(){
+
+    }
 }

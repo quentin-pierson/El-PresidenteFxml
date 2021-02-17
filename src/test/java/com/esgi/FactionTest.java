@@ -31,4 +31,11 @@ public class FactionTest {
         faction.addSatisfaction(-20);
         Assert.assertEquals(faction.getSatisfaction(),0);
     }
+
+    @Test
+    public void add_satisfaction_is_max(){
+        Faction faction = new Faction("FactionTest",90, NationType.nationalist,10);
+        faction.addSatisfaction(20);
+        Assert.assertEquals(faction.getSatisfaction(),100);
+    }
 }
