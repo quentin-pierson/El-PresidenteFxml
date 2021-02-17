@@ -53,7 +53,8 @@ public class App extends Application {
         String pathMusic = "src/main/resources/com/esgi/Sound/MusicMain.mp3";
         Media h = new Media(new File(pathMusic).toURI().toString());
         mediaPlayer = new MediaPlayer(h);
+        mediaPlayer.setCycleCount(mediaPlayer.INDEFINITE);
+        mediaPlayer.setVolume(0.5d);
         mediaPlayer.play();
-        mediaPlayer.setVolume(1.0);
     }
 }

@@ -9,26 +9,27 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.ArrayList;
 
 public class Game {
-    private int difficulty;
     private int season;
     private ArrayList<Island> islands;
     private Calamity calamity;
+    private Parameter parameter;
 
-    public Game()
-    {
+    public Game() {
         super();
-        islands = new ArrayList<Island>();
-    }
-
-    public Game(int difficulty) {
-        super();
-        this.difficulty = difficulty;
         season = 0;
         islands = new ArrayList<Island>();
     }
 
+    public Parameter getParameter() {
+        return parameter;
+    }
+
+    public void setParameter(Parameter parameter){
+        this.parameter = parameter;
+    }
+
     public int getDifficulty() {
-        return difficulty;
+        return parameter.getDifficulty();
     }
 
     public int getSeason() {

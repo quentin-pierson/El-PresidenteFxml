@@ -1,4 +1,5 @@
 package com.esgi.services;
+import com.esgi.models.Parameter;
 import com.esgi.models.Save;
 import com.esgi.models.Calamities.Calamity;
 import com.esgi.models.Calamities.SeasonType;
@@ -17,6 +18,9 @@ public class GameEngine {
 
     public void createGame(){
         game = new Game();
+        Parameter parameter = new Parameter();
+
+        game.setParameter(parameter);
     }
 
     public void initGame(){
@@ -25,6 +29,10 @@ public class GameEngine {
     }
     public void loadGame(){
 
+    }
+
+    public Game getGame(){
+        return game;
     }
 
     public void saveGame(){
