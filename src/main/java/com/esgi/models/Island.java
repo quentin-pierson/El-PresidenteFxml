@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.ArrayList;
 import java.util.List;
 
-@JsonIgnoreProperties({ "accumulation", "accumulationMax" })
+@JsonIgnoreProperties({ "accumulation", "accumulationMax", "citizen"})
 public class Island {
 
     private String islandName;
@@ -56,6 +56,10 @@ public class Island {
         this.globalSatisfaction = globalSatisfaction;
 
         this.factions = factions;
+    }
+
+    public void addFaction(Faction faction){
+        factions.add(faction);
     }
 
     public String getIslandName() {
@@ -114,16 +118,28 @@ public class Island {
         }
     }
 
-    public void addScore(){
-        score += 1;
+    public int getScore() {
+        return score;
     }
 
     public int getTreasury() {
         return treasury;
     }
 
-    public int getScore() {
-        return score;
+    public void endYear() {
+        score +=1;
+        treasury += industry * 10;
+        stockFood += agriculture * 40;
+        stockFood -= getCitizen() * 4;
+    }
+
+
+    public int getCitizen(){
+        int citizen = 0;
+        for (Faction faction: factions){
+            citizen += faction.getSupporter();
+        }
+        return citizen;
     }
 
     public float getGlobalSatisfaction() {

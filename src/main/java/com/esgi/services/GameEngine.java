@@ -6,11 +6,19 @@ import com.esgi.models.Calamities.SeasonType;
 import com.esgi.models.Game;
 import com.esgi.models.Island;
 
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
 public class GameEngine {
 
     private Game game;
 
     private Save save;
+
+    private ServerSocket serverSocket;
+    private Socket clientSocket;
+    private ChatServices chatServices;
 
     public GameEngine(){
         save = new Save();
@@ -27,7 +35,34 @@ public class GameEngine {
         Island island = new Island("islandos","dictator","islander",10,15,10,15,50);
         game.addIsland(island);
         game.setId(save.numberSave());
+        game.setFaction();
+        game.setCalamity();
     }
+
+    public void joinMultiplayer(String host){
+        try{
+            serverSocket = null;
+            clientSocket = new Socket(host,5000);
+
+            chatServices = new ChatServices();
+            chatServices.Listen(clientSocket, serverSocket);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void CreateMultiplayer(){
+        try{
+            serverSocket = new ServerSocket(5000);
+            clientSocket = serverSocket.accept();
+
+            chatServices = new ChatServices();
+            chatServices.Listen(clientSocket, serverSocket);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void loadGame(int i){
         game = save.loadGame(i);
     }

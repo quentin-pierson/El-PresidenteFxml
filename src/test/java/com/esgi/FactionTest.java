@@ -17,4 +17,18 @@ public class FactionTest {
         Faction faction = new Faction("FactionTest",10, NationType.nationalist,10);
         Assert.assertEquals(faction.getSatisfactionCalculated(),100);
     }
+
+    @Test
+    public void add_satisfaction(){
+        Faction faction = new Faction("FactionTest",10, NationType.nationalist,10);
+        faction.addSatisfaction(10);
+        Assert.assertEquals(faction.getSatisfaction(),20);
+    }
+
+    @Test
+    public void add_satisfaction_negative(){
+        Faction faction = new Faction("FactionTest",10, NationType.nationalist,10);
+        faction.addSatisfaction(-20);
+        Assert.assertEquals(faction.getSatisfaction(),0);
+    }
 }

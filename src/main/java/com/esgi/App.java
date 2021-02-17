@@ -30,6 +30,9 @@ public class App extends Application {
         stage.setScene(scene);
         stage.show();
         gameEngine = new GameEngine();
+        gameEngine.createGame();
+        gameEngine.initGame();
+        gameEngine.saveGame();
         playMusic();
     }
 
@@ -47,7 +50,7 @@ public class App extends Application {
     }
 
     public void playMusic(){
-        String pathMusic = "src/main/resources/com/esgi/Sound/MusicMain.mp3";
+        String pathMusic = "src/main/resources/com/esgi/sound/MusicMain.mp3";
         Media h = new Media(new File(pathMusic).toURI().toString());
         mediaPlayer = new MediaPlayer(h);
         mediaPlayer.setCycleCount(mediaPlayer.INDEFINITE);

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class Save {
     private ArrayList<Game> games;
-    private final String path = "save.json";
+    private final String path = "src/main/resources/com/esgi/data/save.json";
 
     public Save(){
         ObjectMapper mapper = new ObjectMapper();

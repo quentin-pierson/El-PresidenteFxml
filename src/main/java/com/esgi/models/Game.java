@@ -11,13 +11,14 @@ import java.util.ArrayList;
 public class Game {
     private int id;
     private int season;
+    private int totalSeason;
     private ArrayList<Island> islands;
     private Calamity calamity;
     private Parameter parameter;
 
     public Game() {
         super();
-        season = 0;
+        this.season = -1;
         islands = new ArrayList<Island>();
     }
 
@@ -41,6 +42,10 @@ public class Game {
         return season;
     }
 
+    public int getTotalSeason() {
+        return totalSeason;
+    }
+
     public ArrayList<Island> getIslands() {
         return islands;
     }
@@ -59,23 +64,35 @@ public class Game {
 
     private int addSeason() {
         season+=1;
+        totalSeason+=1;
         if(this.season == 4){
             this.season = 0;
-            addScore();
+            endYear();
         }
         return season;
     }
 
-    private void addScore(){
+    private void endYear(){
         for(Island island: islands){
-            island.addScore();
+            island.endYear();
         }
     }
 
     public void setCalamity(){
         int time = addSeason();
-        do{
+        /*do{
             calamity = DataService.getInstance().getCalamity().isSeason(SeasonType.valueOf(time));
-        }while (calamity == null);
+        }while (calamity == null);*/
+    }
+
+    public void setFaction(){
+        for (Island island:islands) {
+            for (int i = 0; i< parameter.getMaxsize(); i++){
+                if(parameter.getFactionOn(i)){
+                    Faction faction = new Faction("",0,i+3,10);
+                    island.addFaction(faction);
+                }
+            }
+        }
     }
 }
