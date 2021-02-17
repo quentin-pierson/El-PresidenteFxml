@@ -17,6 +17,7 @@ public class Game {
     public Game()
     {
         super();
+        islands = new ArrayList<Island>();
     }
 
     public Game(int difficulty) {
