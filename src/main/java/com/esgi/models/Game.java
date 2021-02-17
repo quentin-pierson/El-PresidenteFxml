@@ -3,12 +3,13 @@ package com.esgi.models;
 import com.esgi.models.Calamities.Calamity;
 import com.esgi.models.Calamities.SeasonType;
 import com.esgi.services.DataService;
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.ArrayList;
 
+@JsonIgnoreProperties({ "difficulty" })
 public class Game {
+    private int id;
     private int season;
     private ArrayList<Island> islands;
     private Calamity calamity;
@@ -27,6 +28,10 @@ public class Game {
     public void setParameter(Parameter parameter){
         this.parameter = parameter;
     }
+
+    public void setId(int id){ this.id = id;}
+
+    public int getId(){ return id;}
 
     public int getDifficulty() {
         return parameter.getDifficulty();

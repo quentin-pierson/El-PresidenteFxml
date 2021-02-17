@@ -19,7 +19,7 @@ import java.nio.file.Paths;
 public class App extends Application {
 
     private static Scene scene;
-
+    private GameEngine gameEngine;
     MediaPlayer mediaPlayer;
 
     @Override
@@ -29,11 +29,8 @@ public class App extends Application {
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
-        GameEngine gameEngine = new GameEngine();
+        gameEngine = new GameEngine();
         playMusic();
-        gameEngine.createGame();
-        gameEngine.initGame();
-        gameEngine.saveGame();
     }
 
     static void setRoot(String fxml) throws IOException {

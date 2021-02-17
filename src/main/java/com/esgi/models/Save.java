@@ -27,6 +27,17 @@ public class Save {
     }
 
     public void saveGame(Game game){
+
+        try{
+            Game existGame = games.stream().filter(g -> g.getId() == game.getId()).findFirst().orElse(null);
+
+            if(existGame != null){
+                games.remove(existGame);
+            }
+        }catch (Exception ex){
+
+        }
+
         games.add(game);
 
         DataManagement.getInstance().serialize(path, games);
@@ -34,5 +45,9 @@ public class Save {
 
     public Game loadGame(int i){
         return games.get(i);
+    }
+
+    public int numberSave(){
+        return games.size();
     }
 }

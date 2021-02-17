@@ -26,9 +26,10 @@ public class GameEngine {
     public void initGame(){
         Island island = new Island("islandos","dictator","islander",10,15,10,15,50);
         game.addIsland(island);
+        game.setId(save.numberSave());
     }
-    public void loadGame(){
-
+    public void loadGame(int i){
+        game = save.loadGame(i);
     }
 
     public Game getGame(){
