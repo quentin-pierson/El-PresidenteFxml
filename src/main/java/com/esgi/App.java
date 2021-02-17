@@ -16,13 +16,20 @@ public class App extends Application {
 
     private static Scene scene;
 
+    // create scene main and call button to play options and quit
+    
+
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"));
-        stage.setScene(scene);
-        GameEngine gameEngine = new GameEngine();
+        scene = new Scene(loadFXML("sample"));
+
+        /*GameEngine gameEngine = new GameEngine();
         gameEngine.initGame();
-        gameEngine.saveGame();
+        gameEngine.saveGame();*/
+
+        stage.setScene(scene);
+        stage.setFullScreen(true);
+        stage.setResizable(false);
         stage.show();
     }
 

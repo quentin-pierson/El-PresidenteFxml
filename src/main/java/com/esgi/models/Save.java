@@ -12,7 +12,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 public class Save {
     private ArrayList<Game> games;
-    private final String path = "./data/save.json";
+    private final String path = "/data/save.json";
 
     public Save(){
         ObjectMapper mapper = new ObjectMapper();
