@@ -21,15 +21,8 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("sample"));
-
-        /*GameEngine gameEngine = new GameEngine();
-        gameEngine.initGame();
-        gameEngine.saveGame();*/
-
+        scene = new Scene(loadFXML("primary"));
         stage.setScene(scene);
-        stage.setFullScreen(true);
-        stage.setResizable(false);
         stage.show();
     }
 
@@ -43,6 +36,9 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
+        GameEngine gameEngine = new GameEngine();
+        gameEngine.initGame();
+        gameEngine.saveGame();
         launch();
     }
 

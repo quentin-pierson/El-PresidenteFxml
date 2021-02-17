@@ -4,6 +4,11 @@ public class Effect {
     private int value;
     private NationType nationType;
 
+    public Effect()
+    {
+        super();
+    }
+
     public Effect(int value, NationType nationType){
         this.value = value;
         this.nationType = nationType;

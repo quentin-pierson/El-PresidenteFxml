@@ -1,6 +1,10 @@
 package com.esgi.models.Calamities;
 
 public class CalamitySummer extends Calamity{
+    public CalamitySummer()
+    {
+        super();
+    }
     public CalamitySummer(String name, String description) {
         super(name, description);
     }

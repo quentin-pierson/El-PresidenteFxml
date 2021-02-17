@@ -6,6 +6,11 @@ public class Faction {
     private NationType nationType;
     private int supporter;
 
+    public Faction()
+    {
+        super();
+    }
+
     public Faction(String name, int satisfaction, NationType nationType, int supporter) {
         this.name = name;
         this.satisfaction = satisfaction;

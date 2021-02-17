@@ -1,6 +1,10 @@
 package com.esgi.models.Calamities;
 
 public class CalamitySpring extends Calamity{
+    public CalamitySpring()
+    {
+        super();
+    }
     public CalamitySpring(String name, String description) {
         super(name, description);
     }
