@@ -44,6 +44,8 @@ public class Game {
         return id;
     }
 
+    public void setGameType(GameType gameType){ this.gameType = gameType;}
+
     public int getDifficulty() {
         return parameter.getDifficulty();
     }
@@ -54,6 +56,10 @@ public class Game {
 
     public int getTotalSeason() {
         return totalSeason;
+    }
+
+    public GameType getGameType() {
+        return gameType;
     }
 
     public ArrayList<Island> getIslands() {

@@ -20,7 +20,8 @@ public class LoadGameController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         for (Game game : App.getGameEngine().getSave().getGames()) {
-            listViewGame.getItems().add(game.toString());
+            if(App.getGameType() == game.getGameType()) listViewGame.getItems().add(game.toString());
+
         }
     }
 
@@ -29,4 +30,11 @@ public class LoadGameController implements Initializable {
     private void switchToPlay() throws IOException {
         App.setRoot("play");
     }
+
+    @FXML
+    private void switchToCreateGame() throws IOException {
+        App.setRoot("createGame");
+    }
+
+
 }
