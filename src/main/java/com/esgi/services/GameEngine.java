@@ -1,4 +1,5 @@
 package com.esgi.services;
+
 import com.esgi.models.*;
 import com.esgi.models.Calamities.Calamity;
 import com.esgi.models.Calamities.SeasonType;
@@ -17,29 +18,29 @@ public class GameEngine {
     private Socket clientSocket;
     private ChatServices chatServices;
 
-    public GameEngine(){
+    public GameEngine() {
         save = new Save();
     }
 
-    public void createGame(){
+    public void createGame() {
         game = new Game(GameType.singlePlayer);
         Parameter parameter = new Parameter();
 
         game.setParameter(parameter);
     }
 
-    public void initGame(){
-        Island island = new Island("islandos","dictator","islander",10,15,10,15,50);
+    public void initGame() {
+        Island island = new Island("islandos", "dictator", "islander", 10, 15, 10, 15, 50);
         game.addIsland(island);
         game.setId(save.numberSave());
         game.setFaction();
         game.setCalamity();
     }
 
-    public void joinMultiplayer(String host){
-        try{
+    public void joinMultiplayer(String host) {
+        try {
             serverSocket = null;
-            clientSocket = new Socket(host,5000);
+            clientSocket = new Socket(host, 5000);
 
             chatServices = new ChatServices();
             chatServices.Listen(clientSocket, serverSocket);
@@ -48,8 +49,8 @@ public class GameEngine {
         }
     }
 
-    public void CreateMultiplayer(){
-        try{
+    public void CreateMultiplayer() {
+        try {
             serverSocket = new ServerSocket(5000);
             clientSocket = serverSocket.accept();
 
@@ -60,15 +61,15 @@ public class GameEngine {
         }
     }
 
-    public void loadGame(int i){
+    public void loadGame(int i) {
         game = save.loadGame(i);
     }
 
-    public Game getGame(){
+    public Game getGame() {
         return game;
     }
 
-    public void saveGame(){
+    public void saveGame() {
         save.saveGame(game);
     }
 

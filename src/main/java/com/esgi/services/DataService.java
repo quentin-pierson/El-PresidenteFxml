@@ -11,8 +11,8 @@ public class DataService {
 
     private static DataService instance;
 
-    public static DataService getInstance(){
-        if(instance == null){
+    public static DataService getInstance() {
+        if (instance == null) {
             instance = new DataService();
         }
         return instance;
@@ -24,19 +24,21 @@ public class DataService {
     private ArrayList<Calamity> calamities = new ArrayList<Calamity>();
     private ArrayList<Campaign> campaigns = new ArrayList<Campaign>();
 
-    public DataService(){
-        DataManagement dataManagement =new DataManagement();
+    public DataService() {
+        DataManagement dataManagement = new DataManagement();
         calamities = dataManagement.deserializeListCalamity(pathCalamities);
         campaigns = dataManagement.deserializeListCampaign(pathCampaigns);
     }
 
-    public Calamity getCalamity(){
+    public Calamity getCalamity() {
         return arrayRandom(calamities);
     }
 
-    public ArrayList<Campaign> getCampaigns(){ return campaigns;}
+    public ArrayList<Campaign> getCampaigns() {
+        return campaigns;
+    }
 
-    public <T> T arrayRandom(ArrayList<T> list){
+    public <T> T arrayRandom(ArrayList<T> list) {
         Random random = new Random();
         int rnd = random.nextInt(list.size());
         T obj = list.get(rnd);

@@ -48,7 +48,7 @@ public class App extends Application {
         launch();
     }
 
-    public void playMusic(){
+    public void playMusic() {
         String pathMusic = "src/main/resources/com/esgi/sound/MusicMain.mp3";
         Media h = new Media(new File(pathMusic).toURI().toString());
         mediaPlayer = new MediaPlayer(h);

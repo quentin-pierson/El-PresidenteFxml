@@ -2,6 +2,7 @@ package com.esgi.controllers;
 
 import com.esgi.App;
 import javafx.fxml.FXML;
+
 import java.io.IOException;
 
 public class PlayController {

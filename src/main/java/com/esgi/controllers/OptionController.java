@@ -16,7 +16,7 @@ public class OptionController implements Initializable {
     @FXML Slider volumeSlider;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources){
+    public void initialize(URL location, ResourceBundle resources) {
         modificationVolume();
     }
 
@@ -26,7 +26,7 @@ public class OptionController implements Initializable {
     }
 
 
-    private void modificationVolume(){
+    private void modificationVolume() {
         volumeSlider.setValue(App.getMediaPlayer().getVolume() * 100);
         volumeSlider.valueProperty().addListener(new InvalidationListener() {
             @Override
@@ -35,7 +35,4 @@ public class OptionController implements Initializable {
             }
         });
     }
-
-
-
 }

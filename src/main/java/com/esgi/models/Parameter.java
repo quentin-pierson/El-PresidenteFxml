@@ -6,39 +6,42 @@ public class Parameter {
     private boolean foodExpiration;
     private int difficulty;
 
-    public Parameter(){
-        super(); enableAll();
+    public Parameter() {
+        super();
+        enableAll();
     }
 
-    public boolean getFactionOn(int i){
+    public boolean getFactionOn(int i) {
         return factionsOn[i];
     }
 
-    public int getMaxsize(){
+    public int getMaxsize() {
         return maxsize;
     }
 
-    public void setDifficulty(int difficulty){ this.difficulty = difficulty;}
+    public void setDifficulty(int difficulty) {
+        this.difficulty = difficulty;
+    }
 
     public int getDifficulty() {
         return difficulty;
     }
 
-    public void setFoodExpiration(boolean foodExpiration){
+    public void setFoodExpiration(boolean foodExpiration) {
         this.foodExpiration = foodExpiration;
     }
 
-    public boolean getFoodExpiration(){
+    public boolean getFoodExpiration() {
         return foodExpiration;
     }
 
-    public void enableAll(){
-        for (int i = 0; i < maxsize; i++){
+    public void enableAll() {
+        for (int i = 0; i < maxsize; i++) {
             factionsOn[i] = true;
         }
     }
 
-    public void setFactionOn(int i){
+    public void setFactionOn(int i) {
         factionsOn[i] = !factionsOn[i];
     }
 }

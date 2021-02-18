@@ -10,14 +10,15 @@ public class Campaign {
 
     private ArrayList<Calamity> calamities;
 
-    Campaign(){
+    Campaign() {
         super();
     }
 
-    public Game getGame(){
+    public Game getGame() {
         return game;
     }
-    public Calamity getCalamity(){
+
+    public Calamity getCalamity() {
         return calamities.get(game.getTotalSeason());
     }
 
