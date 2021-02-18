@@ -25,10 +25,10 @@
         <TextField fx:id="DictatorName" layoutX="130.0" layoutY="170.0" promptText="Dictator name" />
         <TextField fx:id="IslandName" layoutX="130.0" layoutY="210.0" promptText="Island Name" />
         <TextField fx:id="CitizenName" layoutX="130.0" layoutY="250.0" promptText="Citizen Name" />
-        <ChoiceBox layoutX="130.0" layoutY="330.0" prefWidth="150.0">
+        <ChoiceBox fx:id="difficulty" onAction="#chooseDifficulty" layoutX="130.0" layoutY="330.0" prefWidth="150.0" value="Easy">
             <items>
                 <FXCollections fx:factory="observableArrayList">
-                    <String fx:value="Easy" />
+                    <String fx:value="Easy"/>
                     <String fx:value="Medium" />
                     <String fx:value="Hard" />
                 </FXCollections>
@@ -65,7 +65,7 @@
                 <Font size="15.0" />
             </font>
         </Text>
-        <CheckBox layoutX="130.0" layoutY="380.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="150.0" text="Food expiration">
+        <CheckBox layoutX="130.0" layoutY="380.0" onAction="#checkBoxFoodExpiration" mnemonicParsing="false" prefHeight="21.0" prefWidth="150.0" text="Food expiration">
             <font>
                 <Font size="15.0" />
             </font>

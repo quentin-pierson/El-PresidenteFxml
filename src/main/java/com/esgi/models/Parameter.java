@@ -27,8 +27,8 @@ public class Parameter {
         return difficulty;
     }
 
-    public void setFoodExpiration(boolean foodExpiration) {
-        this.foodExpiration = foodExpiration;
+    public void setFoodExpiration() {
+        foodExpiration = !foodExpiration;
     }
 
     public boolean getFoodExpiration() {
