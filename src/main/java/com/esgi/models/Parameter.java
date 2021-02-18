@@ -49,11 +49,11 @@ public class Parameter {
         int cnt = 0;
 
         for (int i = 0; i < maxsize; i++) {
-            if(factionsOn[i] = true){
+            if(factionsOn[i]){
                 cnt++;
             }
         }
 
-        return cnt >= 5 ? true : false;
+        return cnt >= 5;
     }
 }

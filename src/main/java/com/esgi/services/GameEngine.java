@@ -23,7 +23,7 @@ public class GameEngine {
     }
 
     public void createGame() {
-        game = new Game();
+        game = new Game(-1);
         Parameter parameter = new Parameter();
 
         game.setParameter(parameter);

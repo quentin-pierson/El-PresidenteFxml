@@ -21,10 +21,9 @@ public class Game {
         super();
     }
 
-    public Game(GameType gameType) {
+    public Game(int season) {
         super();
-        this.gameType = gameType;
-        this.season = -1;
+        this.season = season;
         islands = new ArrayList<Island>();
     }
 
