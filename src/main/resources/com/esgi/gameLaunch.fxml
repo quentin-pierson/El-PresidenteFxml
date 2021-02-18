@@ -18,12 +18,12 @@
                 <Image url="@image/background.jpg" />
             </image>
         </ImageView>
-        <Button fx:id="buttonLeave" layoutX="675.0" layoutY="455.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="110.0" text="leave">
+        <Button fx:id="buttonLeave" layoutX="675.0" layoutY="455.0" onAction="#switchToMenu" mnemonicParsing="false" prefHeight="30.0" prefWidth="110.0" text="leave">
             <font>
                 <Font size="15.0" />
             </font>
         </Button>
-      <ListView fx:id="listViewGame" layoutX="267.0" layoutY="172.0" prefHeight="268.0" prefWidth="483.0" />
+      <ListView fx:id="listViewGame" onMouseClicked="#handleMouseClick" layoutX="267.0" layoutY="172.0" prefHeight="268.0" prefWidth="483.0" />
       <Pane layoutX="267.0" layoutY="32.0" prefHeight="113.0" prefWidth="483.0" style="-fx-background-color: white;">
          <children>
             <Line endX="379.0" layoutX="104.0" layoutY="31.0" startX="-104.0" strokeWidth="1.5" />
@@ -34,7 +34,7 @@
             <Line endX="93.0" layoutX="107.0" layoutY="32.0" startX="-107.0" strokeWidth="1.5" />
          </children>
       </Pane>
-      <ListView layoutX="31.0" layoutY="268.0" prefHeight="146.0" prefWidth="193.0" />
+      <ListView fx:id="listViewChat" layoutX="31.0" layoutY="268.0" prefHeight="146.0" prefWidth="193.0" />
       <TextField fx:id="textChat" layoutX="31.0" layoutY="417.0" promptText="Enter text" />
       <Button fx:id="buttonSend" layoutX="184.0" layoutY="417.0" mnemonicParsing="false" text="Send" />
       <Text fx:id="textSatisfactionGlobal" layoutX="42.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="satisfactionGlobal">

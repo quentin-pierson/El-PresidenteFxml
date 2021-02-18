@@ -25,7 +25,7 @@ public class Island {
     }
 
     //new game Construct
-    public Island(String islandName, String dictatorName, String citizensName, int agriculture, int stockFood, int industry, int treasury, float globalSatisfaction) {
+    public Island(String islandName, String dictatorName, String citizensName, int agriculture, int industry, int treasury, float globalSatisfaction) {
         this.islandName = islandName;
         this.dictatorName = dictatorName;
         this.citizensName = citizensName;
@@ -34,7 +34,6 @@ public class Island {
         this.industry = industry;
         this.treasury = treasury;
 
-        this.stockFood = stockFood;
         this.score = 0;
         this.globalSatisfaction = globalSatisfaction;
 
@@ -42,7 +41,7 @@ public class Island {
     }
 
     //load game Construct
-    public Island(String islandName, String dictatorName, String citizensName, int agriculture, int stockFood, int industry, int treasury, int score, float globalSatisfaction, ArrayList<Faction> factions) {
+    public Island(String islandName, String dictatorName, String citizensName, int agriculture, int industry, int treasury, int score, float globalSatisfaction, ArrayList<Faction> factions) {
         this.islandName = islandName;
         this.dictatorName = dictatorName;
         this.citizensName = citizensName;
@@ -51,7 +50,6 @@ public class Island {
         this.industry = industry;
         this.treasury = treasury;
 
-        this.stockFood = stockFood;
         this.score = score;
         this.globalSatisfaction = globalSatisfaction;
 
@@ -208,26 +206,40 @@ public class Island {
         return globalSatisfaction;
     }
 
-    public void addChoiceValue(NationType nationType, int value) {
+    public void addChoiceValue(NationType nationType, int action) {
         if (nationType == NationType.agriculture) {
-            agriculture += value;
+            agriculture += action;
             if (isAccumulationMax()) {
                 industry -= removeAccumulation();
             }
+            if(agriculture < 0){
+                agriculture = 0;
+            }
+
         } else if (nationType == NationType.industry) {
-            industry += value;
+            industry += action;
             if (isAccumulationMax()) {
                 agriculture -= removeAccumulation();
             }
+            if(industry < 0){
+                industry = 0;
+            }
+
         } else if (nationType == NationType.treasury) {
-            treasury += value;
+            treasury += action;
         } else {
             for (Faction faction : factions) {
                 if (faction.getFactionType() == nationType) {
-                    faction.addSatisfaction(value);
+                    faction.addSatisfaction(action);
                     break;
                 }
             }
+        }
+    }
+
+    public void choseChoice(Choice choice){
+        for(Effect effect: choice.getEffects()){
+            addChoiceValue(effect.getNationType(),effect.getAction());
         }
     }
 
@@ -240,7 +252,11 @@ public class Island {
             globalSupporter += faction.getSupporter();
         }
 
-        this.globalSatisfaction = satisfaction / globalSupporter;
+        try {
+            this.globalSatisfaction = satisfaction / globalSupporter;
+        }catch (Exception ex){
+            this.globalSatisfaction = 0;
+        }
     }
 
 }

@@ -32,12 +32,10 @@ public class GameEngine {
     public boolean initGame(GameType gameType, String islandName, String dictatorName, String citizenName) {
         if (game.getParameter().minFaction()) {
             game.setGameType(gameType);
-            Island island = new Island(islandName, dictatorName, citizenName, 10, 15, 10, 15, 50);
+            Island island = new Island(islandName, dictatorName, citizenName, 10, 10, 15, 50);
             game.addIsland(island);
             game.setId(save.numberSave());
             game.setFaction();
-            game.setCalamity();
-            saveGame();
             return true;
         }
         return false;
@@ -70,6 +68,8 @@ public class GameEngine {
     public void loadGame(int i) {
         game = save.loadGame(i);
     }
+
+    public void setGame(Game game) {this.game = game;}
 
     public Game getGame() {
         return game;

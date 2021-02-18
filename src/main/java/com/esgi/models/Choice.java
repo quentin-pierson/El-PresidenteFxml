@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public class Choice {
     private String description;
+    private int calamityChild;
     private ArrayList<Effect> effects;
 
     public Choice() {
@@ -26,4 +27,11 @@ public class Choice {
         return text;
     }
 
+    public int getCalamityChild() {
+        return calamityChild;
+    }
+
+    public ArrayList<Effect> getEffects() {
+        return effects;
+    }
 }

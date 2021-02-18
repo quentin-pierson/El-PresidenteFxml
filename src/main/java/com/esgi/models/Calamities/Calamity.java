@@ -21,6 +21,7 @@ import java.util.ArrayList;
 })
 @JsonIgnoreProperties({"choicesDisplay"})
 public class Calamity {
+    private int id;
     private String name;
     private String description;
     ArrayList<Choice> choices;
@@ -53,6 +54,10 @@ public class Calamity {
 
     public Calamity isSeason(SeasonType seasonType) {
         return this;
+    }
+
+    public Choice getChoice(int i){
+        return choices.get(i);
     }
 
 }

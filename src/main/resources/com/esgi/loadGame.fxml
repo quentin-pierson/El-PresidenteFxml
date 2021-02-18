@@ -20,7 +20,7 @@
                <Font size="15.0" />
            </font>
        </Button>
-      <ListView fx:id="listViewGame" layoutX="100.0" layoutY="75.0" prefHeight="350.0" prefWidth="600.0" />
+      <ListView fx:id="listViewGame" onMouseClicked="#handleMouseClick" layoutX="100.0" layoutY="75.0" prefHeight="350.0" prefWidth="600.0" />
       <Text layoutX="330.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Load Game" wrappingWidth="139.31103515625">
          <font>
             <Font name="Impact" size="25.0" />

@@ -18,7 +18,7 @@ public class Effect {
     private boolean isNegative() { return action> 0; }
 
     public String display(){
-        String text = "";
+        String text = " " + nationType;
 
         if (isNegative()) {
             text += "+";
@@ -27,12 +27,19 @@ public class Effect {
         text += action;
 
         if (nationType == NationType.treasury) {
-            text += "$";
+            text += "$,";
         } else {
-            text += "%";
+            text += "%,";
         }
-        text += " " + nationType;
 
         return text;
+    }
+
+    public int getAction() {
+        return action;
+    }
+
+    public NationType getNationType() {
+        return nationType;
     }
 }

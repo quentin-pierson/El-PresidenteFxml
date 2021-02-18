@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.ArrayList;
 
-@JsonIgnoreProperties({"difficulty"})
+@JsonIgnoreProperties({"difficulty", "seasonType"})
 public class Game {
     private int id;
     private int season;
@@ -53,6 +53,10 @@ public class Game {
         return season;
     }
 
+    public SeasonType getSeasonType() {
+        return SeasonType.valueOf(season);
+    }
+
     public int getTotalSeason() {
         return totalSeason;
     }
@@ -95,6 +99,11 @@ public class Game {
 
     public void setCalamity() {
         int time = addSeason();
+
+        for(Island island :islands){
+            island.setGlobalSatisfaction();
+        }
+
         do{
             calamity = DataService.getInstance().getCalamity().isSeason(SeasonType.valueOf(time));
         }while (calamity == null);
@@ -104,10 +113,12 @@ public class Game {
         for (Island island : islands) {
             for (int i = 0; i < parameter.getMaxsize(); i++) {
                 if (parameter.getFactionOn(i)) {
-                    Faction faction = new Faction("", 0, i + 3, 10);
+                    Faction faction = new Faction("", 50, i + 3, 15);
                     island.addFaction(faction);
                 }
             }
+            int food = island.getCitizen()*6;
+            island.addStockFood(food);
         }
     }
 

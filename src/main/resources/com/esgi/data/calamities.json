@@ -1,9 +1,11 @@
 [ {
+  "id" : 0,
   "type" : "calamity",
   "name" : "Calamity Test",
   "description" : "a tsunami in city arrive",
   "choices" : [ {
       "description" : "lets continue",
+      "calamityChild" : -1,
       "effects" : [{
         "action" : 10,
         "nationType" : "capitalist"
@@ -16,6 +18,7 @@
       }]
   },{
     "description" : "Build a wall",
+    "calamityChild" : -1,
     "effects" : [{
       "action" : -10,
       "nationType" : "capitalist"
@@ -31,6 +34,7 @@
     }]
   },{
     "description" : "Pray god",
+    "calamityChild" : -1,
     "effects" : [{
       "action" : -10,
       "nationType" : "agriculture"
@@ -43,6 +47,7 @@
     }]
   },{
     "description" : "Repair all when is over",
+    "calamityChild" : -1,
     "effects" : [{
       "action" : 10,
       "nationType" : "capitalist"
@@ -59,11 +64,13 @@
   }
   ]
 },{
+  "id" : 2,
   "type" : "calamity",
   "name" : "Calamity Test",
-  "description" : "a tsunami in city arrive",
+  "description" : "OKAY LETS GO",
   "choices" : [ {
     "description" : "lets continue",
+    "calamityChild" : -1,
     "effects" : [{
       "action" : 10,
       "nationType" : "capitalist"
@@ -76,6 +83,7 @@
     }]
   },{
     "description" : "Build a wall",
+    "calamityChild" : -1,
     "effects" : [{
       "action" : -10,
       "nationType" : "capitalist"
@@ -91,6 +99,7 @@
     }]
   },{
     "description" : "Pray god",
+    "calamityChild" : -1,
     "effects" : [{
       "action" : -10,
       "nationType" : "agriculture"
@@ -103,6 +112,7 @@
     }]
   },{
     "description" : "Repair all when is over",
+    "calamityChild" : -1,
     "effects" : [{
       "action" : 10,
       "nationType" : "capitalist"

@@ -59,5 +59,11 @@ public class Save {
     public ArrayList<Game> getGames() {
         return games;
     }
+
+    public void removeGame(Game game){
+        games.remove(game);
+    }
+
+    public Game getGame(int id) { return games.stream().filter(g -> id == g.getId()).findFirst().orElse(null); }
 }
 
