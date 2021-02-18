@@ -1,6 +1,7 @@
 package com.esgi;
 
 import com.esgi.models.Game;
+import com.esgi.models.GameType;
 import com.esgi.services.GameEngine;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -23,6 +24,7 @@ public class App extends Application {
     private static Scene scene;
     private static GameEngine gameEngine = new GameEngine();
     private static MediaPlayer mediaPlayer;
+    private static GameType gameType;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -62,5 +64,13 @@ public class App extends Application {
 
     public static MediaPlayer getMediaPlayer() {
         return mediaPlayer;
+    }
+
+    public static GameType getGameType() {
+        return gameType;
+    }
+
+    public static void setGameType(GameType gameType) {
+        App.gameType = gameType;
     }
 }
