@@ -44,4 +44,16 @@ public class Parameter {
     public void setFactionOn(int i) {
         factionsOn[i] = !factionsOn[i];
     }
+
+    public boolean minFaction(){
+        int cnt = 0;
+
+        for (int i = 0; i < maxsize; i++) {
+            if(factionsOn[i] = true){
+                cnt++;
+            }
+        }
+
+        return cnt >= 5 ? true : false;
+    }
 }
