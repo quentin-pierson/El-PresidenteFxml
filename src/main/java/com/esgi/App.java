@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class App extends Application {
 
     private static Scene scene;
-    private static GameEngine gameEngine = new GameEngine();
+    private static GameEngine gameEngine;
     private static MediaPlayer mediaPlayer;
 
     @Override
@@ -31,7 +31,7 @@ public class App extends Application {
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
-        //gameEngine = new GameEngine();
+        gameEngine = new GameEngine();
         playMusic();
     }
 
