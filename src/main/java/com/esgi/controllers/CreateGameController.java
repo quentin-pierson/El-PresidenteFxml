@@ -22,7 +22,7 @@ public class CreateGameController implements Initializable {
 
     @FXML
     private void startGame(){
-        App.getGameEngine().
+        App.getGameEngine().initGame(App.getGameType(),IslandName.getText(),DictatorName.getText(),CitizenName.getText());
     }
 
     @FXML

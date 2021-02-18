@@ -30,12 +30,15 @@ public class GameEngine {
     }
 
     public void initGame(GameType gameType, String islandName, String dictatorName, String citizenName) {
-        game.setGameType(gameType);
-        Island island = new Island(islandName, dictatorName, citizenName, 10, 15, 10, 15, 50);
-        game.addIsland(island);
-        game.setId(save.numberSave());
-        game.setFaction();
-        game.setCalamity();
+        if (game.getParameter().minFaction()) {
+            game.setGameType(gameType);
+            Island island = new Island(islandName, dictatorName, citizenName, 10, 15, 10, 15, 50);
+            game.addIsland(island);
+            game.setId(save.numberSave());
+            game.setFaction();
+            game.setCalamity();
+            saveGame();
+        }
     }
 
     public void joinMultiplayer(String host) {
