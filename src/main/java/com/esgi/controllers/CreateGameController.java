@@ -23,8 +23,8 @@ public class CreateGameController implements Initializable {
     }
 
     @FXML
-    private void startGame(){
-        App.getGameEngine().initGame(App.getGameType(),IslandName.getText(),DictatorName.getText(),CitizenName.getText());
+    private void startGame()throws IOException{
+        if(App.getGameEngine().initGame(App.getGameType(),IslandName.getText(),DictatorName.getText(),CitizenName.getText())) App.setRoot("gameLaunch");
     }
 
     @FXML

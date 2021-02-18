@@ -29,7 +29,7 @@ public class GameEngine {
         game.setParameter(parameter);
     }
 
-    public void initGame(GameType gameType, String islandName, String dictatorName, String citizenName) {
+    public boolean initGame(GameType gameType, String islandName, String dictatorName, String citizenName) {
         if (game.getParameter().minFaction()) {
             game.setGameType(gameType);
             Island island = new Island(islandName, dictatorName, citizenName, 10, 15, 10, 15, 50);
@@ -38,7 +38,9 @@ public class GameEngine {
             game.setFaction();
             game.setCalamity();
             saveGame();
+            return true;
         }
+        return false;
     }
 
     public void joinMultiplayer(String host) {
