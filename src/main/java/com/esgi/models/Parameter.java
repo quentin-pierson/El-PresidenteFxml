@@ -7,7 +7,7 @@ public class Parameter {
     private int difficulty;
 
     public Parameter(){
-        enableAll();
+        super(); enableAll();
     }
 
     public boolean getFactionOn(int i){

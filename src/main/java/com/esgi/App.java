@@ -63,12 +63,4 @@ public class App extends Application {
     public static MediaPlayer getMediaPlayer() {
         return mediaPlayer;
     }
-
-    public static ArrayList<String> getList(){
-        ArrayList<String> arrayList = new ArrayList<String>();
-        for (Game game: gameEngine.getSave().getGames()){
-            arrayList.add(game.toMother());
-        }
-        return arrayList;
-    }
 }

@@ -20,8 +20,9 @@ public class Save {
     public Save(){
         ObjectMapper mapper = new ObjectMapper();
         mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
+        DataManagement dataManagement = new DataManagement();
 
-        games = DataManagement.getInstance().deserializeList(path);
+        games = dataManagement.deserializeListGame(path);
 
         if(games == null) games = new ArrayList<Game>();
     }
@@ -40,7 +41,9 @@ public class Save {
 
         games.add(game);
 
-        DataManagement.getInstance().serialize(path, games);
+        DataManagement dataManagement = new DataManagement();
+
+        dataManagement.serialize(path, games);
     }
 
     public Game loadGame(int i){

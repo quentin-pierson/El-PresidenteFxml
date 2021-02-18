@@ -18,8 +18,10 @@ public class LoadGameController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        listViewGame.getItems().addAll(App.getList());
 
+        for (Game game: App.getGameEngine().getSave().getGames()){
+            listViewGame.getItems().add(game.toString());
+        }
     }
 
 

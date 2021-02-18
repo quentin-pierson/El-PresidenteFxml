@@ -17,6 +17,10 @@ public class Game {
     private GameType gameType;
     private Parameter parameter;
 
+    public Game(){
+        super();
+    }
+
     public Game(GameType gameType) {
         super();
         this.gameType = gameType;
@@ -98,8 +102,8 @@ public class Game {
         }
     }
 
-
-    public String toMother() {
-        return " " + id  + " " + islands.get(0).getIslandName() + " Difficulty: " + parameter.getDifficulty() + " Total Season: " + totalSeason;
+    @Override
+    public String toString() {
+        return " " + id  + " | Name Island: " + islands.get(0).getIslandName() + " | Difficulty: " + parameter.getDifficulty() + " | Total Season: " + totalSeason;
     }
 }

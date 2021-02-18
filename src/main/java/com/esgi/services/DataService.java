@@ -25,8 +25,9 @@ public class DataService {
     private ArrayList<Campaign> campaigns = new ArrayList<Campaign>();
 
     public DataService(){
-        calamities = DataManagement.getInstance().deserializeList(pathCalamities);
-        campaigns = DataManagement.getInstance().deserializeList(pathCampaigns);
+        DataManagement dataManagement =new DataManagement();
+        calamities = dataManagement.deserializeListCalamity(pathCalamities);
+        campaigns = dataManagement.deserializeListCampaign(pathCampaigns);
     }
 
     public Calamity getCalamity(){
