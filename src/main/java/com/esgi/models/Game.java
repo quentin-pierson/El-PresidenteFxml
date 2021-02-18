@@ -44,6 +44,8 @@ public class Game {
         return id;
     }
 
+    public void setGameType(GameType gameType){ this.gameType = gameType;}
+
     public int getDifficulty() {
         return parameter.getDifficulty();
     }
