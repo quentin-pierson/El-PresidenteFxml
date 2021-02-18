@@ -1,5 +1,7 @@
 package com.esgi.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.ArrayList;
 
 public class Choice {
@@ -16,18 +18,10 @@ public class Choice {
     }
 
     public String display() {
-        String text = description + " ";
-        char valueType;
+        String text = description + ":";
+
         for (Effect effect : effects) {
-            if (effect.getValue() > 0) {
-                text += "+";
-            }
-            if (effect.getNationType() == NationType.treasury) {
-                valueType = '$';
-            } else {
-                valueType = '%';
-            }
-            text += effect.getValue() + valueType + " satisfaction of " + effect.getNationType();
+            text += " " + effect.display();
         }
         return text;
     }

@@ -2,7 +2,6 @@ package com.esgi.services;
 
 import com.esgi.models.Calamities.Calamity;
 import com.esgi.models.Campaign;
-import com.esgi.models.Game;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -19,7 +18,7 @@ public class DataService {
     }
 
     private final String pathCalamities = "src/main/resources/com/esgi/data/calamities.json";
-    private final String pathCampaigns = "src/main/resources/com/esgi/data/calamities.json";
+    private final String pathCampaigns = "src/main/resources/com/esgi/data/campaign.json";
 
     private ArrayList<Calamity> calamities = new ArrayList<Calamity>();
     private ArrayList<Campaign> campaigns = new ArrayList<Campaign>();
@@ -27,7 +26,7 @@ public class DataService {
     public DataService() {
         DataManagement dataManagement = new DataManagement();
         calamities = dataManagement.deserializeListCalamity(pathCalamities);
-        campaigns = dataManagement.deserializeListCampaign(pathCampaigns);
+        //campaigns = dataManagement.deserializeListCampaign(pathCampaigns);
     }
 
     public Calamity getCalamity() {

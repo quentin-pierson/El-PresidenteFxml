@@ -1,5 +1,6 @@
 package com.esgi.models;
 
+import com.esgi.models.Calamities.Calamity;
 import com.esgi.services.DataManagement;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;

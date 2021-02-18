@@ -1,0 +1,121 @@
+[ {
+  "type" : "calamity",
+  "name" : "Calamity Test",
+  "description" : "a tsunami in city arrive",
+  "choices" : [ {
+      "description" : "lets continue",
+      "effects" : [{
+        "action" : 10,
+        "nationType" : "capitalist"
+      }, {
+          "action" : -10,
+          "nationType" : "religious"
+        }, {
+        "action" : -10,
+        "nationType" : "environmentalist"
+      }]
+  },{
+    "description" : "Build a wall",
+    "effects" : [{
+      "action" : -10,
+      "nationType" : "capitalist"
+    }, {
+      "action" : 10,
+      "nationType" : "religious"
+    }, {
+      "action" : 10,
+      "nationType" : "environmentalist"
+    }, {
+      "action" : 10,
+      "nationType" : "industry"
+    }]
+  },{
+    "description" : "Pray god",
+    "effects" : [{
+      "action" : -10,
+      "nationType" : "agriculture"
+    }, {
+      "action" : 10,
+      "nationType" : "religious"
+    }, {
+      "action" : -10,
+      "nationType" : "environmentalist"
+    }]
+  },{
+    "description" : "Repair all when is over",
+    "effects" : [{
+      "action" : 10,
+      "nationType" : "capitalist"
+    }, {
+      "action" : -10,
+      "nationType" : "nationalist"
+    }, {
+      "action" : -10,
+      "nationType" : "loyalist"
+    }, {
+      "action" : 10,
+      "nationType" : "industry"
+    }]
+  }
+  ]
+},{
+  "type" : "calamity",
+  "name" : "Calamity Test",
+  "description" : "a tsunami in city arrive",
+  "choices" : [ {
+    "description" : "lets continue",
+    "effects" : [{
+      "action" : 10,
+      "nationType" : "capitalist"
+    }, {
+      "action" : -10,
+      "nationType" : "religious"
+    }, {
+      "action" : -10,
+      "nationType" : "environmentalist"
+    }]
+  },{
+    "description" : "Build a wall",
+    "effects" : [{
+      "action" : -10,
+      "nationType" : "capitalist"
+    }, {
+      "action" : 10,
+      "nationType" : "religious"
+    }, {
+      "action" : 10,
+      "nationType" : "environmentalist"
+    }, {
+      "action" : 10,
+      "nationType" : "industry"
+    }]
+  },{
+    "description" : "Pray god",
+    "effects" : [{
+      "action" : -10,
+      "nationType" : "agriculture"
+    }, {
+      "action" : 10,
+      "nationType" : "religious"
+    }, {
+      "action" : -10,
+      "nationType" : "environmentalist"
+    }]
+  },{
+    "description" : "Repair all when is over",
+    "effects" : [{
+      "action" : 10,
+      "nationType" : "capitalist"
+    }, {
+      "action" : -10,
+      "nationType" : "nationalist"
+    }, {
+      "action" : -10,
+      "nationType" : "loyalist"
+    }, {
+      "action" : 10,
+      "nationType" : "industry"
+    }]
+  }
+  ]
+}]

@@ -95,9 +95,9 @@ public class Game {
 
     public void setCalamity() {
         int time = addSeason();
-        /*do{
+        do{
             calamity = DataService.getInstance().getCalamity().isSeason(SeasonType.valueOf(time));
-        }while (calamity == null);*/
+        }while (calamity == null);
     }
 
     public void setFaction() {

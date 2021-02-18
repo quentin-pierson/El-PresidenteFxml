@@ -1,6 +1,7 @@
 package com.esgi.models.Calamities;
 
 import com.esgi.models.Choice;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonSubTypes.*;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
         @Type(value = CalamitySummer.class, name = "CalamitySummer"),
         @Type(value = CalamityWinter.class, name = "CalamityWinter")
 })
-
+@JsonIgnoreProperties({"choicesDisplay"})
 public class Calamity {
     private String name;
     private String description;
@@ -34,16 +35,20 @@ public class Calamity {
         choices = new ArrayList<Choice>();
     }
 
-    private String getName() {
+    public String getName() {
         return name;
     }
 
-    private String getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    private Choice getChoice(int i) {
-        return choices.get(i);
+    public ArrayList<String> getChoicesDisplay() {
+        ArrayList<String> effects = new ArrayList<String>();
+        for(Choice choice: choices){
+            effects.add(choice.display());
+        }
+        return effects;
     }
 
     public Calamity isSeason(SeasonType seasonType) {
