@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-@JsonIgnoreProperties({ "accumulation", "accumulationMax", "citizen"})
+@JsonIgnoreProperties({"accumulation", "accumulationMax", "citizen"})
 public class Island {
 
     private String islandName;
@@ -20,8 +20,7 @@ public class Island {
     private float globalSatisfaction;
     private ArrayList<Faction> factions;
 
-    public Island()
-    {
+    public Island() {
         super();
     }
 
@@ -59,7 +58,7 @@ public class Island {
         this.factions = factions;
     }
 
-    public void addFaction(Faction faction){
+    public void addFaction(Faction faction) {
         factions.add(faction);
     }
 
@@ -91,11 +90,11 @@ public class Island {
         return industry;
     }
 
-    public int getAccumulation(){
-        return agriculture+industry;
+    public int getAccumulation() {
+        return agriculture + industry;
     }
 
-    private int removeAccumulation(){
+    private int removeAccumulation() {
         verifyAccumulation();
 
         int accumulation = getAccumulation() - 100;
@@ -103,18 +102,18 @@ public class Island {
         return accumulation;
     }
 
-    private void verifyAccumulation(){
-        if(agriculture > 100){
-            agriculture =100;
-        }else if(industry > 100){
+    private void verifyAccumulation() {
+        if (agriculture > 100) {
+            agriculture = 100;
+        } else if (industry > 100) {
             industry = 100;
         }
     }
 
-    public boolean isAccumulationMax(){
-        if(getAccumulation() > 100){
+    public boolean isAccumulationMax() {
+        if (getAccumulation() > 100) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
@@ -128,31 +127,31 @@ public class Island {
     }
 
     public void endYear() {
-        score +=1;
+        score += 1;
         treasury += industry * 10;
         stockFood += agriculture * 40;
         stockFood -= getCitizen() * 4;
 
-        if(stockFood < 0){
+        if (stockFood < 0) {
             killCitizen();
-        }else{
+        } else {
             growCitizen();
         }
     }
 
-    private void killCitizen(){
+    private void killCitizen() {
         Random random = new Random();
         int citizenKilled = 0;
-        while(stockFood < 0){
+        while (stockFood < 0) {
             int rnd = random.nextInt(factions.size());
             factions.get(rnd).addSupporter(-1);
             citizenKilled++;
-            stockFood+=4;
+            stockFood += 4;
         }
 
         int satisfactionDown = -2 * citizenKilled;
 
-        for (Faction faction: factions) {
+        for (Faction faction : factions) {
             faction.addSatisfaction(satisfactionDown);
         }
 
@@ -160,13 +159,13 @@ public class Island {
     }
 
     //FAIRE UN ALGO POUR QUE CA NE SOIT PAS ALEATOIRE
-    private void growCitizen(){
+    private void growCitizen() {
         Random random = new Random();
         int percentCitizenTotal = random.nextInt(10) + 101;
 
-        int newCitizen = getCitizen() * percentCitizenTotal /100;
+        int newCitizen = getCitizen() * percentCitizenTotal / 100;
 
-        while(stockFood < 0){
+        while (stockFood < 0) {
             int rnd = random.nextInt(factions.size());
             int supporter = random.nextInt(newCitizen) + 1;
 
@@ -175,31 +174,31 @@ public class Island {
         }
     }
 
-    public void buyFood(){
-        if(treasury >= 8){
+    public void buyFood() {
+        if (treasury >= 8) {
             stockFood += 1;
             treasury -= 8;
         }
     }
 
-    private void Corruption(int factionId){
+    private void Corruption(int factionId) {
         Faction faction = factions.get(factionId);
         Faction loyalist = factions.stream().filter(f -> f.getFactionType() == NationType.loyalist).findFirst().orElse(null);
 
         int totalPrice = faction.getSupporter() * 15;
-        if(treasury >= totalPrice){
+        if (treasury >= totalPrice) {
             faction.addSatisfaction(10);
 
-            int loyalistSatisfaction = totalPrice /10;
+            int loyalistSatisfaction = totalPrice / 10;
 
             loyalist.addSatisfaction(-loyalistSatisfaction);
             treasury -= totalPrice;
         }
     }
 
-    public int getCitizen(){
+    public int getCitizen() {
         int citizen = 0;
-        for (Faction faction: factions){
+        for (Faction faction : factions) {
             citizen += faction.getSupporter();
         }
         return citizen;
@@ -209,22 +208,22 @@ public class Island {
         return globalSatisfaction;
     }
 
-    public void addChoiceValue(NationType nationType, int value){
-        if(nationType == NationType.agriculture){
+    public void addChoiceValue(NationType nationType, int value) {
+        if (nationType == NationType.agriculture) {
             agriculture += value;
-            if(isAccumulationMax()){
+            if (isAccumulationMax()) {
                 industry -= removeAccumulation();
             }
-        }else if(nationType == NationType.industry){
+        } else if (nationType == NationType.industry) {
             industry += value;
-            if(isAccumulationMax()){
+            if (isAccumulationMax()) {
                 agriculture -= removeAccumulation();
             }
-        }else if(nationType == NationType.treasury){
+        } else if (nationType == NationType.treasury) {
             treasury += value;
-        }else {
-            for (Faction faction:factions) {
-                if(faction.getFactionType() == nationType){
+        } else {
+            for (Faction faction : factions) {
+                if (faction.getFactionType() == nationType) {
                     faction.addSatisfaction(value);
                     break;
                 }
@@ -236,12 +235,12 @@ public class Island {
         int satisfaction = 0;
         int globalSupporter = 0;
 
-        for (Faction faction:factions) {
+        for (Faction faction : factions) {
             satisfaction += faction.getSatisfactionCalculated();
             globalSupporter += faction.getSupporter();
         }
 
-        this.globalSatisfaction = satisfaction/globalSupporter;
+        this.globalSatisfaction = satisfaction / globalSupporter;
     }
 
 }

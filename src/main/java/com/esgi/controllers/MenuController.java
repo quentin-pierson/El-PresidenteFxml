@@ -15,7 +15,8 @@ public class MenuController {
         App.setRoot("option");
     }
 
-    @FXML public Button buttonClose;
+    @FXML
+    public Button buttonClose;
 
     @FXML
     public void handleCloseButtonAction(ActionEvent event) {
@@ -27,6 +28,4 @@ public class MenuController {
     private void switchToPlay() throws IOException {
         App.setRoot("play");
     }
-
-
 }

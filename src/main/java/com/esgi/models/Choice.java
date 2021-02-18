@@ -6,26 +6,25 @@ public class Choice {
     private String description;
     private ArrayList<Effect> effects;
 
-    public Choice()
-    {
+    public Choice() {
         super();
     }
 
-    public Choice(String description){
+    public Choice(String description) {
         this.description = description;
         effects = new ArrayList<Effect>();
     }
 
-    public String display(){
+    public String display() {
         String text = description + " ";
         char valueType;
-        for (Effect effect:effects) {
-            if(effect.getValue() > 0){
+        for (Effect effect : effects) {
+            if (effect.getValue() > 0) {
                 text += "+";
             }
-            if(effect.getNationType() == NationType.treasury){
+            if (effect.getNationType() == NationType.treasury) {
                 valueType = '$';
-            }else{
+            } else {
                 valueType = '%';
             }
             text += effect.getValue() + valueType + " satisfaction of " + effect.getNationType();

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class App extends Application {
 
     private static Scene scene;
-    private static GameEngine gameEngine = new GameEngine();
+    private static GameEngine gameEngine;
     private static MediaPlayer mediaPlayer;
     private static GameType gameType;
 
@@ -33,7 +33,7 @@ public class App extends Application {
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
-        //gameEngine = new GameEngine();
+        gameEngine = new GameEngine();
         playMusic();
     }
 
@@ -50,7 +50,7 @@ public class App extends Application {
         launch();
     }
 
-    public void playMusic(){
+    public void playMusic() {
         String pathMusic = "src/main/resources/com/esgi/sound/MusicMain.mp3";
         Media h = new Media(new File(pathMusic).toURI().toString());
         mediaPlayer = new MediaPlayer(h);

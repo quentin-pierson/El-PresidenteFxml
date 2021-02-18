@@ -20,33 +20,35 @@ import java.util.ArrayList;
 })
 
 public class Calamity {
-        private String name;
-        private String description;
-        ArrayList<Choice> choices;
+    private String name;
+    private String description;
+    ArrayList<Choice> choices;
 
-        public Calamity()
-        {
-            super();
-        }
-
-        Calamity(String name, String description) {
-            this.name = name;
-            this.description = description;
-            choices = new ArrayList<Choice>();
-        }
-
-        private String getName(){
-            return name;
-        }
-
-        private String getDescription(){
-            return description;
-        }
-
-        private Choice getChoice(int i){ return choices.get(i);}
-
-        public Calamity isSeason(SeasonType seasonType){
-            return this;
-        }
+    public Calamity() {
+        super();
     }
+
+    Calamity(String name, String description) {
+        this.name = name;
+        this.description = description;
+        choices = new ArrayList<Choice>();
+    }
+
+    private String getName() {
+        return name;
+    }
+
+    private String getDescription() {
+        return description;
+    }
+
+    private Choice getChoice(int i) {
+        return choices.get(i);
+    }
+
+    public Calamity isSeason(SeasonType seasonType) {
+        return this;
+    }
+
+}
 

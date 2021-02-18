@@ -22,12 +22,13 @@ public class DataManagement {
 
     ObjectMapper mapper = new ObjectMapper();
 
-    public ArrayList<Game> deserializeListGame(String path){
+    public ArrayList<Game> deserializeListGame(String path) {
 
         mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
 
-        try{
-            return mapper.readValue(new File(path), new TypeReference<ArrayList<Game>>(){});
+        try {
+            return mapper.readValue(new File(path), new TypeReference<ArrayList<Game>>() {
+            });
 
         } catch (JsonGenerationException e) {
             e.printStackTrace();
@@ -40,12 +41,13 @@ public class DataManagement {
         return null;
     }
 
-    public ArrayList<Calamity> deserializeListCalamity(String path){
+    public ArrayList<Calamity> deserializeListCalamity(String path) {
 
         mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
 
-        try{
-            return mapper.readValue(new File(path), new TypeReference<ArrayList<Calamity>>(){});
+        try {
+            return mapper.readValue(new File(path), new TypeReference<ArrayList<Calamity>>() {
+            });
 
         } catch (JsonGenerationException e) {
             e.printStackTrace();
@@ -58,12 +60,13 @@ public class DataManagement {
         return null;
     }
 
-    public ArrayList<Campaign> deserializeListCampaign(String path){
+    public ArrayList<Campaign> deserializeListCampaign(String path) {
 
         mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
 
-        try{
-            return mapper.readValue(new File(path), new TypeReference<ArrayList<Campaign>>(){});
+        try {
+            return mapper.readValue(new File(path), new TypeReference<ArrayList<Campaign>>() {
+            });
 
         } catch (JsonGenerationException e) {
             e.printStackTrace();
@@ -76,12 +79,13 @@ public class DataManagement {
         return null;
     }
 
-    public <T> T deserialize(String path){
+    public <T> T deserialize(String path) {
         ObjectMapper mapper = new ObjectMapper();
         mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
 
-        try{
-            return mapper.readValue(new File(path), new TypeReference<T>(){});
+        try {
+            return mapper.readValue(new File(path), new TypeReference<T>() {
+            });
 
         } catch (JsonGenerationException e) {
             e.printStackTrace();
@@ -94,7 +98,7 @@ public class DataManagement {
         return null;
     }
 
-    public <T> void serialize(String path, T obj){
+    public <T> void serialize(String path, T obj) {
         ObjectMapper mapper = new ObjectMapper();
         mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
 

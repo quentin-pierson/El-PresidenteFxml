@@ -14,17 +14,18 @@ public class ChatServices {
 
         final BufferedReader in;
         final PrintWriter out;
-        final Scanner sc=new Scanner(System.in);
+        final Scanner sc = new Scanner(System.in);
 
         try {
 
             out = new PrintWriter(clientSocket.getOutputStream());
-            in = new BufferedReader (new InputStreamReader (clientSocket.getInputStream()));
+            in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             Thread send = new Thread(new Runnable() {
                 String msg;
+
                 @Override
                 public void run() {
-                    while(true){
+                    while (true) {
                         msg = sc.nextLine();
                         out.println(msg);
                         out.flush();
@@ -33,15 +34,16 @@ public class ChatServices {
             });
             send.start();
 
-            Thread receive= new Thread(new Runnable() {
-                String msg ;
+            Thread receive = new Thread(new Runnable() {
+                String msg;
+
                 @Override
                 public void run() {
                     try {
                         msg = in.readLine();
 
-                        while(msg!=null){
-                            System.out.println("Client : "+msg);
+                        while (msg != null) {
+                            System.out.println("Client : " + msg);
                             msg = in.readLine();
                         }
 
@@ -49,7 +51,7 @@ public class ChatServices {
 
                         out.close();
                         clientSocket.close();
-                        if(serverSocket == null){
+                        if (serverSocket == null) {
                             serverSocket.close();
                         }
                     } catch (IOException e) {
@@ -58,7 +60,7 @@ public class ChatServices {
                 }
             });
             receive.start();
-        }catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

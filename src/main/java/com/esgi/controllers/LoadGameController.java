@@ -19,7 +19,7 @@ public class LoadGameController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        for (Game game: App.getGameEngine().getSave().getGames()){
+        for (Game game : App.getGameEngine().getSave().getGames()) {
             listViewGame.getItems().add(game.toString());
         }
     }
@@ -29,7 +29,4 @@ public class LoadGameController implements Initializable {
     private void switchToPlay() throws IOException {
         App.setRoot("play");
     }
-
-
-
 }

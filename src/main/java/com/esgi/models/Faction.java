@@ -2,15 +2,14 @@ package com.esgi.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties({ "factionType","satisfactionCalculated" })
+@JsonIgnoreProperties({"factionType", "satisfactionCalculated"})
 public class Faction {
     private String name;
     private int satisfaction;
     private NationType nationType;
     private int supporter;
 
-    public Faction()
-    {
+    public Faction() {
         super();
     }
 
@@ -28,15 +27,15 @@ public class Faction {
         this.supporter = supporter;
     }
 
-    public int getSupporter(){
+    public int getSupporter() {
         return supporter;
     }
 
-    public void addSupporter(int supporter){
+    public void addSupporter(int supporter) {
         this.supporter += supporter;
     }
 
-    public int getSatisfactionCalculated(){
+    public int getSatisfactionCalculated() {
         return supporter * satisfaction;
     }
 
@@ -45,12 +44,12 @@ public class Faction {
     }
 
     public void addSatisfaction(int satisfaction) {
-        if(this.satisfaction != 0){
+        if (this.satisfaction != 0) {
             this.satisfaction += satisfaction;
 
-            if(this.satisfaction < 0){
+            if (this.satisfaction < 0) {
                 this.satisfaction = 0;
-            }else if(this.satisfaction > 100){
+            } else if (this.satisfaction > 100) {
                 this.satisfaction = 100;
             }
         }
