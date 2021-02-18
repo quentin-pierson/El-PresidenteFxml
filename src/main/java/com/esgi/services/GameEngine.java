@@ -23,14 +23,15 @@ public class GameEngine {
     }
 
     public void createGame() {
-        game = new Game(GameType.singlePlayer);
+        game = new Game();
         Parameter parameter = new Parameter();
 
         game.setParameter(parameter);
     }
 
-    public void initGame() {
-        Island island = new Island("islandos", "dictator", "islander", 10, 15, 10, 15, 50);
+    public void initGame(GameType gameType, String islandName, String dictatorName, String citizenName) {
+        game.setGameType(gameType);
+        Island island = new Island(islandName, dictatorName, citizenName, 10, 15, 10, 15, 50);
         game.addIsland(island);
         game.setId(save.numberSave());
         game.setFaction();
