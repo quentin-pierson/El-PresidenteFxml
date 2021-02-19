@@ -61,26 +61,25 @@ public class GameController implements Initializable {
 
     /*
     public void resizeListView(ListView<String> listView) {
-        listView.setCellFactory(new Callback<ListView<String>, ListCell<String>>() {
-            @Override
-            public ListCell<String> call(ListView<String> stringListView) {
-                final ListCell<String> cell = new ListCell<String>() {
-                    {
-                        setWrapText(true);
-                    }
-
+        ListView<String> lv = new ListView<>();
+        lv.setCellFactory(lst ->
+                new ListCell<String>() {
+                    @Override
                     protected void updateItem(String item, boolean empty) {
                         super.updateItem(item, empty);
-                        if (!empty) {
+                        if (empty) {
+                            setPrefHeight(70);
+                            setText(null);
+                        } else {
+                            setPrefHeight(70);
                             setText(item);
                         }
                     }
-                };
-                return cell;
-            }
-        });
+                });
     }
     */
+
+
 
     private void initVal() throws IOException {
 
