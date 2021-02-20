@@ -6,8 +6,10 @@ import com.esgi.models.Choice;
 import com.esgi.models.Game;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Region;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
