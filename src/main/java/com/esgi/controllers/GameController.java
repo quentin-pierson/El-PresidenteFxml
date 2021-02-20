@@ -11,6 +11,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Region;
 import javafx.scene.text.Text;
+import javafx.util.Callback;
 
 import java.io.IOException;
 import java.net.URL;
@@ -39,16 +40,17 @@ public class GameController implements Initializable {
     Text textCalamities;
     @FXML
     Text textSatisfactionGlobal;
-    //@FXML
-    //Text textCitizen;
+    @FXML
+    Text textCitizen;
 
     Game game;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        //resizeListView(listViewGame);
+        //resizeListView(listViewChat);
         game = App.getGameEngine().getGame();
-        if(game.getCalamity() == null) game.setCalamity();
+        if (game.getCalamity() == null) game.setCalamity();
 
         try {
             initVal();
@@ -56,6 +58,28 @@ public class GameController implements Initializable {
             e.printStackTrace();
         }
     }
+
+    /*
+    public void resizeListView(ListView<String> listView) {
+        ListView<String> lv = new ListView<>();
+        lv.setCellFactory(lst ->
+                new ListCell<String>() {
+                    @Override
+                    protected void updateItem(String item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty) {
+                            setPrefHeight(70);
+                            setText(null);
+                        } else {
+                            setPrefHeight(70);
+                            setText(item);
+                        }
+                    }
+                });
+    }
+    */
+
+
 
     private void initVal() throws IOException {
 
@@ -65,7 +89,7 @@ public class GameController implements Initializable {
 
         float globalSatisfaction = game.getIsland(0).getGlobalSatisfaction();
 
-        if(globalSatisfaction <= 0) endGame();
+        if (globalSatisfaction <= 0) endGame();
 
         listViewGame.getItems().addAll(game.getCalamity().getChoicesDisplay());
         textTreasure.setText("Treasury: " + game.getIsland(0).getTreasury());
@@ -76,14 +100,14 @@ public class GameController implements Initializable {
         textScore.setText("Score: " + game.getIsland(0).getScore());
         textCalamities.setText(game.getCalamity().getName() + ": " + game.getCalamity().getDescription());
         textSatisfactionGlobal.setText("Global satisfaction: " + globalSatisfaction);
-        //textCitizen.setText("Citizen: " + game.getIsland(0).getCitizen());
+        textCitizen.setText("Citizen: " + game.getIsland(0).getCitizen());
     }
 
     @FXML
     public void handleMouseClick(MouseEvent arg0) throws IOException {
 
         int number = listViewGame.getSelectionModel().getSelectedIndex();
-        if(number >= 0){
+        if (number >= 0) {
             Choice choice = game.getCalamity().getChoice(number);
 
             String text = "Game console: Your choice is:" + choice.display();
@@ -95,14 +119,16 @@ public class GameController implements Initializable {
         }
     }
 
-    public void addChat(String text){
+    public void addChat(String text) {
         listViewChat.getItems().add(text);
     }
+
     private void endGame() throws IOException {
         App.getGameEngine().setGame(null);
         App.getGameEngine().getSave().removeGame(game);
         switchToMenu();
     }
+
     @FXML
     private void switchToMenu() throws IOException {
         App.getGameEngine().setGame(null);
