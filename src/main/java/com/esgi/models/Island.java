@@ -80,6 +80,10 @@ public class Island {
         return stockFood;
     }
 
+    public ArrayList<Faction> getFactions() {
+        return factions;
+    }
+
     public void addStockFood(int stockFood) {
         this.stockFood += stockFood;
     }
@@ -179,17 +183,17 @@ public class Island {
         }
     }
 
-    private void Corruption(int factionId) {
+    public void corruption(int factionId) {
         Faction faction = factions.get(factionId);
         Faction loyalist = factions.stream().filter(f -> f.getFactionType() == NationType.loyalist).findFirst().orElse(null);
 
-        int totalPrice = faction.getSupporter() * 15;
+        int totalPrice = faction.corruptionPrice();
         if (treasury >= totalPrice) {
             faction.addSatisfaction(10);
-
-            int loyalistSatisfaction = totalPrice / 10;
-
-            loyalist.addSatisfaction(-loyalistSatisfaction);
+            if(faction.getFactionType()!=NationType.loyalist && loyalist!= null){
+                int loyalistSatisfaction = totalPrice / 10;
+                loyalist.addSatisfaction(-loyalistSatisfaction);
+            }
             treasury -= totalPrice;
         }
     }
@@ -258,5 +262,6 @@ public class Island {
             this.globalSatisfaction = 0;
         }
     }
+
 
 }

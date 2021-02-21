@@ -2,7 +2,7 @@ package com.esgi.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties({"factionType", "satisfactionCalculated"})
+@JsonIgnoreProperties({"factionType", "satisfactionCalculated","corruptionPrice"})
 public class Faction {
     private String name;
     private int satisfaction;
@@ -61,5 +61,9 @@ public class Faction {
 
     public NationType getFactionType() {
         return nationType;
+    }
+
+    public int corruptionPrice(){
+        return supporter*15;
     }
 }
