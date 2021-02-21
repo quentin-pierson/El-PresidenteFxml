@@ -642,5 +642,291 @@
       }]
     }
     ]
+  },  {
+  "id" : 20,
+  "type" : "calamity",
+  "name" : "Farmer",
+  "description" : "All farmer has disagree",
+  "choices" : [ {
+    "description" : "build some farm",
+    "calamityChild" : -1,
+    "effects" : [{
+      "action" : 20,
+      "nationType" : "agriculture"
+    }, {
+      "action" : -10,
+      "nationType" : "environmentalist"
+    }]
+  },{
+    "description" : "close industry",
+    "calamityChild" : -1,
+    "effects" : [{
+      "action" : 30,
+      "nationType" : "agriculture"
+    }, {
+      "action" : -10,
+      "nationType" : "capitalist"
+    }, {
+      "action" : -10,
+      "nationType" : "industry"
+    }]
+  },{
+    "description" : "Continue like that",
+    "calamityChild" : -1,
+    "effects" : [{
+      "action" : -10,
+      "nationType" : "agriculture"
+    }, {
+      "action" : 10,
+      "nationType" : "royalist"
+    }]
+  },{
+    "description" : "Kill dissident",
+    "calamityChild" : -1,
+    "effects" : [{
+      "action" : -10,
+      "nationType" : "communism"
+    }, {
+      "action" : 200,
+      "nationType" : "treasury"
+    }, {
+      "action" : -15,
+      "nationType" : "agriculture"
+    }]
   }
+  ]
+},{
+  "id" : 21,
+  "type" : "calamityWinter",
+  "name" : "Frost in street",
+  "description" : "The citizens are cold and hungry",
+  "choices" : [ {
+    "description" : "feed them",
+    "calamityChild" : -1,
+    "effects" : [{
+      "action" : -5,
+      "nationType" : "agriculture"
+    }, {
+      "action" : 10,
+      "nationType" : "religious"
+    }, {
+      "action" : 10,
+      "nationType" : "communism"
+    }]
+  },{
+    "description" : "made cloth",
+    "calamityChild" : -1,
+    "effects" : [{
+      "action" : 10,
+      "nationType" : "capitalist"
+    }, {
+      "action" : 5,
+      "nationType" : "industry"
+    }, {
+      "action" : 10,
+      "nationType" : "religious"
+    }]
+  },{
+    "description" : "Made nothing",
+    "calamityChild" : -1,
+    "effects" : [{
+      "action" : -10,
+      "nationType" : "communism"
+    }, {
+      "action" : -10,
+      "nationType" : "religious"
+    }, {
+      "action" : 200,
+      "nationType" : "treasury"
+    }]
+  },{
+    "description" : "Kill the weak",
+    "calamityChild" : -1,
+    "effects" : [{
+      "action" : 250,
+      "nationType" : "treasury"
+    }, {
+      "action" : -15,
+      "nationType" : "religious"
+    }, {
+      "action" : -15,
+      "nationType" : "communism"
+    }, {
+      "action" : 10,
+      "nationType" : "loyalist"
+    }]
+  }
+  ]
+},{
+  "id" : 22,
+  "type" : "calamity",
+  "name" : "Industry",
+  "description" : "All worker has disagree",
+  "choices" : [ {
+    "description" : "build some industry",
+    "calamityChild" : -1,
+    "effects" : [{
+      "action" : 20,
+      "nationType" : "industry"
+    }, {
+      "action" : -10,
+      "nationType" : "environmentalist"
+    }]
+  },{
+    "description" : "destroyed farm",
+    "calamityChild" : -1,
+    "effects" : [{
+      "action" : -10,
+      "nationType" : "agriculture"
+    }, {
+      "action" : 10,
+      "nationType" : "capitalist"
+    }, {
+      "action" : 30,
+      "nationType" : "industry"
+    }]
+  },{
+    "description" : "Continue like that",
+    "calamityChild" : -1,
+    "effects" : [{
+      "action" : -10,
+      "nationType" : "industry"
+    }, {
+      "action" : 10,
+      "nationType" : "royalist"
+    }]
+  },{
+    "description" : "Kill dissident",
+    "calamityChild" : -1,
+    "effects" : [{
+      "action" : -10,
+      "nationType" : "communism"
+    }, {
+      "action" : 200,
+      "nationType" : "treasury"
+    }, {
+      "action" : -15,
+      "nationType" : "industry"
+    }]
+  }
+  ]
+},{
+  "id" : 23,
+  "type" : "calamityAutumn",
+  "name" : "Criminals",
+  "description" : "Locked up criminals",
+  "choices" : [ {
+    "description" : "Build a new prison",
+    "calamityChild" : -1,
+    "effects" : [{
+      "action" : 10,
+      "nationType" : "industry"
+    }, {
+      "action" : 10,
+      "nationType" : "royalist"
+    }, {
+      "action" : 10,
+      "nationType" : "loyalist"
+    }]
+  },{
+    "description" : "Kill all dissident",
+    "calamityChild" : -1,
+    "effects" : [{
+      "action" : 20,
+      "nationType" : "loyalist"
+    }, {
+      "action" : -10,
+      "nationType" : "communism"
+    }, {
+      "action" : 45,
+      "nationType" : "treasury"
+    }]
+  },{
+    "description" : "Continue like that",
+    "calamityChild" : -1,
+    "effects" : [{
+      "action" : 30,
+      "nationType" : "communism"
+    }, {
+      "action" : -10,
+      "nationType" : "royalist"
+    }, {
+      "action" : -10,
+      "nationType" : "nationalist"
+    }]
+  },{
+    "description" : "deport them in other island",
+    "calamityChild" : -1,
+    "effects" : [{
+      "action" : 10,
+      "nationType" : "nationalist"
+    }, {
+      "action" : 10,
+      "nationType" : "loyalist"
+    }, {
+      "action" : -15,
+      "nationType" : "militarist"
+    }]
+  }
+  ]
+},{
+  "id" : 24,
+  "type" : "calamitySpring",
+  "name" : "Militia",
+  "description" : "A oler general comes to do his propaganda",
+  "choices" : [ {
+    "description" : "Kill them",
+    "calamityChild" : -1,
+    "effects" : [{
+      "action" : -15,
+      "nationType" : "militarist"
+    }, {
+      "action" : 10,
+      "nationType" : "royalist"
+    }, {
+      "action" : 10,
+      "nationType" : "loyalist"
+    }]
+  },{
+    "description" : "Give back it's function",
+    "calamityChild" : -1,
+    "effects" : [{
+      "action" : -5,
+      "nationType" : "loyalist"
+    }, {
+      "action" : 20,
+      "nationType" : "militarist"
+    }, {
+      "action" : -10,
+      "nationType" : "nationalist"
+    }]
+  },{
+    "description" : "Ban propaganda",
+    "calamityChild" : -1,
+    "effects" : [{
+      "action" : -10,
+      "nationType" : "communism"
+    }, {
+      "action" : -10,
+      "nationType" : "liberals"
+    }, {
+      "action" : 20,
+      "nationType" : "capitalist"
+    }]
+  },{
+    "description" : "deport them in other island",
+    "calamityChild" : -1,
+    "effects" : [{
+      "action" : 10,
+      "nationType" : "royalist"
+    }, {
+      "action" : 15,
+      "nationType" : "loyalist"
+    }, {
+      "action" : -5,
+      "nationType" : "militarist"
+    }]
+  }
+  ]
+}
 ]

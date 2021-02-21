@@ -16,15 +16,15 @@ import java.util.ArrayList;
         @Type(value = Calamity.class, name = "calamity"),
         @Type(value = CalamityAutumn.class, name = "calamityAutumn"),
         @Type(value = CalamitySpring.class, name = "calamitySpring"),
-        @Type(value = CalamitySummer.class, name = "CalamitySummer"),
-        @Type(value = CalamityWinter.class, name = "CalamityWinter")
+        @Type(value = CalamitySummer.class, name = "calamitySummer"),
+        @Type(value = CalamityWinter.class, name = "calamityWinter")
 })
 @JsonIgnoreProperties({"choicesDisplay"})
 public class Calamity {
     private int id;
     private String name;
     private String description;
-    ArrayList<Choice> choices;
+    private ArrayList<Choice> choices;
 
     public Calamity() {
         super();
