@@ -36,6 +36,9 @@ public class DataService {
     public ArrayList<Campaign> getCampaigns() {
         return campaigns;
     }
+    public Campaign getCampaign(int i) {
+        return campaigns.get(i);
+    }
 
     public <T> T arrayRandom(ArrayList<T> list) {
         Random random = new Random();

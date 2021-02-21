@@ -30,7 +30,30 @@ public class GameEngine {
         game.setParameter(parameter);
     }
 
+    public void createCampaign(){
+        game = new Campaign(-1);
+        Parameter parameter = new Parameter();
+
+        game.setParameter(parameter);
+    }
+
     public boolean initGame(GameType gameType, String islandName, String dictatorName, String citizenName) {
+        if (game.getParameter().minFaction()) {
+            game.setGameType(gameType);
+            Island island = new Island(islandName, dictatorName, citizenName, 10, 10, 15, 50);
+            game.addIsland(island);
+            game.setId(save.numberSave());
+            game.setFaction();
+            return true;
+        }
+        return false;
+    }
+
+    public boolean initGame(GameType gameType, String islandName, String dictatorName, String citizenName, int campaignId) {
+        Parameter parameter = game.getParameter();
+        game = DataService.getInstance().getCampaign(campaignId);
+        game.setParameter(parameter);
+
         if (game.getParameter().minFaction()) {
             game.setGameType(gameType);
             Island island = new Island(islandName, dictatorName, citizenName, 10, 10, 15, 50);

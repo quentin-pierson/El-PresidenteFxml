@@ -1,0 +1,405 @@
+[ {
+  "id" : 0,
+  "name": "Campaign TEST",
+  "progression": 0,
+  "season" : 0,
+  "totalSeason" : 25,
+  "islands" : [ {
+    "islandName" : "ege",
+    "dictatorName" : "gergeg",
+    "citizensName" : "gege",
+    "agriculture" : 0,
+    "stockFood" : 0,
+    "industry" : 100,
+    "treasury" : 2715,
+    "score" : 6,
+    "globalSatisfaction" : 0.0,
+    "factions" : [ {
+      "name" : "",
+      "satisfaction" : 0,
+      "nationType" : "communism",
+      "supporter" : -1
+    }, {
+      "name" : "",
+      "satisfaction" : 0,
+      "nationType" : "capitalist",
+      "supporter" : 2
+    }, {
+      "name" : "",
+      "satisfaction" : 0,
+      "nationType" : "liberals",
+      "supporter" : 1
+    }, {
+      "name" : "",
+      "satisfaction" : 0,
+      "nationType" : "religious",
+      "supporter" : 4
+    }, {
+      "name" : "",
+      "satisfaction" : 0,
+      "nationType" : "militarist",
+      "supporter" : 0
+    }, {
+      "name" : "",
+      "satisfaction" : 0,
+      "nationType" : "environmentalist",
+      "supporter" : 5
+    }, {
+      "name" : "",
+      "satisfaction" : 0,
+      "nationType" : "nationalist",
+      "supporter" : 0
+    }, {
+      "name" : "",
+      "satisfaction" : 0,
+      "nationType" : "loyalist",
+      "supporter" : -6
+    }, {
+      "name" : "",
+      "satisfaction" : 0,
+      "nationType" : "royalist",
+      "supporter" : -4
+    }, {
+      "name" : "",
+      "satisfaction" : 0,
+      "nationType" : "feminism",
+      "supporter" : -1
+    } ]
+  } ],
+  "calamity" : null,
+  "gameType" : "campaign",
+  "parameter" : {
+    "maxsize" : 10,
+    "factionsOn" : [ true, true, true, true, true, true, true, true, true, true ],
+    "foodExpiration" : false,
+    "difficulty" : 0
+  },
+  "calamities": [
+    {
+      "id" : 0,
+      "type" : "calamityWinter",
+      "name" : "kidnapped",
+      "description" : "An inhabitant has just been kidnapped: ",
+      "choices" : [ {
+        "description" : "Country the ransom to recover it",
+        "calamityChild" : -1,
+        "effects" : [{
+          "action" : -5,
+          "nationType" : "treasury"
+        }, {
+          "action" : -10,
+          "nationType" : "militarist"
+        }, {
+          "action" : -10,
+          "nationType" : "nationalist"
+        }]
+      },{
+        "description" : "Try to look for it",
+        "calamityChild" : -1,
+        "effects" : [{
+          "action" : -10,
+          "nationType" : "capitalist"
+        }, {
+          "action" : 10,
+          "nationType" : "religious"
+        }, {
+          "action" : 10,
+          "nationType" : "environmentalist"
+        }, {
+          "action" : 10,
+          "nationType" : "industry"
+        }]
+      },{
+        "description" : "Strengthening the security of the island",
+        "calamityChild" : -1,
+        "effects" : [{
+          "action" : -10,
+          "nationType" : "agriculture"
+        }, {
+          "action" : 10,
+          "nationType" : "religious"
+        }, {
+          "action" : -10,
+          "nationType" : "environmentalist"
+        }]
+      },{
+        "description" : "We do nothing and let him die",
+        "calamityChild" : -1,
+        "effects" : [{
+          "action" : 10,
+          "nationType" : "capitalist"
+        }, {
+          "action" : -10,
+          "nationType" : "nationalist"
+        }, {
+          "action" : -10,
+          "nationType" : "loyalist"
+        }, {
+          "action" : 10,
+          "nationType" : "industry"
+        }]
+      }
+      ]
+    },{
+      "id" : 2,
+      "type" : "calamitySpring",
+      "name" : "Children",
+      "description" : "Children no longer want to go to school because the school is no longer up too standard",
+      "choices" : [ {
+        "description" : "Bringing the school up to standard",
+        "calamityChild" : -1,
+        "effects" : [{
+          "action" : 10,
+          "nationType" : "capitalist"
+        }, {
+          "action" : -10,
+          "nationType" : "religious"
+        }, {
+          "action" : -10,
+          "nationType" : "environmentalist"
+        }]
+      },{
+        "description" : "Bringing the school up to standard",
+        "calamityChild" : -1,
+        "effects" : [{
+          "action" : -10,
+          "nationType" : "capitalist"
+        }, {
+          "action" : 10,
+          "nationType" : "religious"
+        }, {
+          "action" : 10,
+          "nationType" : "environmentalist"
+        }, {
+          "action" : 10,
+          "nationType" : "industry"
+        }]
+      },{
+        "description" : "Leaving the school in its present state",
+        "calamityChild" : -1,
+        "effects" : [{
+          "action" : -10,
+          "nationType" : "agriculture"
+        }, {
+          "action" : 10,
+          "nationType" : "religious"
+        }, {
+          "action" : -10,
+          "nationType" : "environmentalist"
+        }]
+      },{
+        "description" : "Dance you Children",
+        "calamityChild" : -1,
+        "effects" : [{
+          "action" : 10,
+          "nationType" : "capitalist"
+        }, {
+          "action" : -10,
+          "nationType" : "nationalist"
+        }, {
+          "action" : -10,
+          "nationType" : "loyalist"
+        }, {
+          "action" : 10,
+          "nationType" : "industry"
+        }]
+      }
+      ]
+    },
+    {
+      "id" : 3,
+      "type" : "calamityWinter",
+      "name" : "Frost",
+      "description" : "A This week it is -30",
+      "choices" : [ {
+        "description" : "Warn people to be prepared",
+        "calamityChild" : -1,
+        "effects" : [{
+          "action" : 10,
+          "nationType" : "capitalist"
+        }, {
+          "action" : -10,
+          "nationType" : "religious"
+        }, {
+          "action" : -10,
+          "nationType" : "environmentalist"
+        }]
+      },{
+        "description" : "Bringing food and data to the population",
+        "calamityChild" : -1,
+        "effects" : [{
+          "action" : -10,
+          "nationType" : "capitalist"
+        }, {
+          "action" : 10,
+          "nationType" : "religious"
+        }, {
+          "action" : 10,
+          "nationType" : "environmentalist"
+        }, {
+          "action" : 10,
+          "nationType" : "industry"
+        }]
+      },{
+        "description" : "Bringing back equipment for the most destitute",
+        "calamityChild" : -1,
+        "effects" : [{
+          "action" : -10,
+          "nationType" : "capitalist"
+        }, {
+          "action" : 10,
+          "nationType" : "religious"
+        }, {
+          "action" : -10,
+          "nationType" : "communism"
+        }]
+      },{
+        "description" : "The people manage they are great",
+        "calamityChild" : -1,
+        "effects" : [{
+          "action" : 10,
+          "nationType" : "capitalist"
+        }, {
+          "action" : -10,
+          "nationType" : "nationalist"
+        }, {
+          "action" : -10,
+          "nationType" : "loyalist"
+        }, {
+          "action" : 10,
+          "nationType" : "industry"
+        }]
+      }
+      ]
+    },
+    {
+      "id" : 4,
+      "type" : "calamity",
+      "name" : "Brothel",
+      "description" : "A brothel has just opened:",
+      "choices" : [ {
+        "description" : "Close it and pursue the creators",
+        "calamityChild" : -1,
+        "effects" : [{
+          "action" : -10,
+          "nationType" : "capitalist"
+        }, {
+          "action" : 10,
+          "nationType" : "religious"
+        }, {
+          "action" : -5,
+          "nationType" : "militarist"
+        }]
+      },{
+        "description" : "Advertise this house for the well-being of the people",
+        "calamityChild" : -1,
+        "effects" : [{
+          "action" : 2,
+          "nationType" : "royalist"
+        }, {
+          "action" : -5,
+          "nationType" : "religious"
+        }, {
+          "action" : 10,
+          "nationType" : "liberals"
+        }]
+      },{
+        "description" : "Make discounts on them",
+        "calamityChild" : -1,
+        "effects" : [{
+          "action" : -4,
+          "nationType" : "agriculture"
+        }, {
+          "action" : -4,
+          "nationType" : "capitalist"
+        }, {
+          "action" : 4,
+          "nationType" : "militarist"
+        }]
+      },{
+        "description" : "Leave it open",
+        "calamityChild" : -1,
+        "effects" : [{
+          "action" : -7,
+          "nationType" : "feminism"
+        }, {
+          "action" : -2,
+          "nationType" : "nationalist"
+        }, {
+          "action" : -4,
+          "nationType" : "loyalist"
+        }, {
+          "action" : 7,
+          "nationType" : "industry"
+        }]
+      }
+      ]
+    },
+    {
+      "id" : 5,
+      "type" : "calamityAutumn",
+      "name" : "Dream Party",
+      "description" : "A dream party has just begun",
+      "choices" : [ {
+        "description" : "Calling the Army",
+        "calamityChild" : -1,
+        "effects" : [{
+          "action" : 12,
+          "nationType" : "militarist"
+        }, {
+          "action" : -6,
+          "nationType" : "agriculture"
+        }, {
+          "action" : 4,
+          "nationType" : "liberals"
+        }]
+      },{
+        "description" : "Selling drugs",
+        "calamityChild" : -1,
+        "effects" : [{
+          "action" : -12,
+          "nationType" : "treasury"
+        }, {
+          "action" : 10,
+          "nationType" : "religious"
+        }, {
+          "action" : 3,
+          "nationType" : "nationalist"
+        }, {
+          "action" : 8,
+          "nationType" : "industry"
+        }]
+      },{
+        "description" : "Telling people to go dancing",
+        "calamityChild" : -1,
+        "effects" : [{
+          "action" : 2,
+          "nationType" : "capitalist"
+        }, {
+          "action" : 10,
+          "nationType" : "religious"
+        }, {
+          "action" : -10,
+          "nationType" : "environmentalist"
+        }]
+      },{
+        "description" : "Go smoke hookah",
+        "calamityChild" : -1,
+        "effects" : [{
+          "action" : 4,
+          "nationType" : "communism"
+        }, {
+          "action" : 3,
+          "nationType" : "nationalist"
+        }, {
+          "action" : -10,
+          "nationType" : "loyalist"
+        }, {
+          "action" : -4,
+          "nationType" : "industry"
+        }]
+      }
+      ]
+    }
+  ]
+}]

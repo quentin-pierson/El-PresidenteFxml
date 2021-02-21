@@ -4,6 +4,7 @@ import com.esgi.App;
 
 import com.esgi.models.Choice;
 import com.esgi.models.Game;
+import com.esgi.models.GameType;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
@@ -52,7 +53,12 @@ public class LoadGameController implements Initializable {
 
     @FXML
     private void switchToCreateGame() throws IOException {
-        App.setRoot("createGame");
+        if(App.getGameType() == GameType.campaign) {
+            App.setRoot("createCampaign");
+        }else {
+            App.setRoot("createGame");
+        }
+
     }
 
 
