@@ -17,6 +17,7 @@ public class GameEngine {
     private ServerSocket serverSocket;
     private Socket clientSocket;
     private ChatServices chatServices;
+    private Boolean victory;
 
     public GameEngine() {
         save = new Save();
@@ -81,5 +82,13 @@ public class GameEngine {
 
     public Save getSave() {
         return save;
+    }
+
+    public Boolean getVictory() {
+        return victory;
+    }
+
+    public void setVictory(Boolean victory) {
+        this.victory = victory;
     }
 }

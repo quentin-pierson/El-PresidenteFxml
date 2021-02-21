@@ -26,6 +26,7 @@ public class App extends Application {
     private static MediaPlayer mediaPlayer;
     private static GameType gameType;
 
+
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("menu"));
