@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.esgi</groupId>
     <artifactId>El-PresidenteFxml</artifactId>
@@ -58,7 +58,7 @@
                 <version>0.0.1</version>
                 <configuration>
                     <mainClass>com.esgi.App</mainClass>
-                    <executable>/Library/Java/JavaVirtualMachines/jdk-14.0.2.jdk/Contents/Home/bin/java</executable>
+                    <executable>C:\Program Files\Java\jdk-14.0.2\bin\java</executable>
                 </configuration>
             </plugin>
         </plugins>

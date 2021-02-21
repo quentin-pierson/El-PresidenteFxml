@@ -12,8 +12,8 @@ public class Game {
     private int id;
     private int season;
     private int totalSeason;
-    private ArrayList<Island> islands;
-    private Calamity calamity;
+    protected ArrayList<Island> islands;
+    protected Calamity calamity;
     private GameType gameType;
     private Parameter parameter;
 
@@ -81,7 +81,7 @@ public class Game {
         islands.add(island);
     }
 
-    private int addSeason() {
+    int addSeason() {
         season += 1;
         totalSeason += 1;
         if (this.season == 4) {
@@ -97,7 +97,7 @@ public class Game {
         }
     }
 
-    public void setCalamity() {
+    public boolean setCalamity() {
         int time = addSeason();
 
         for(Island island :islands){
@@ -107,6 +107,8 @@ public class Game {
         do{
             calamity = DataService.getInstance().getCalamity().isSeason(SeasonType.valueOf(time));
         }while (calamity == null);
+
+        return true;
     }
 
     public void setFaction() {
