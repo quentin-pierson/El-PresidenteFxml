@@ -47,8 +47,6 @@ public class GameController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //resizeListView(listViewGame);
-        //resizeListView(listViewChat);
         game = App.getGameEngine().getGame();
         if (game.getCalamity() == null) game.setCalamity();
 
@@ -58,27 +56,6 @@ public class GameController implements Initializable {
             e.printStackTrace();
         }
     }
-
-    /*
-    public void resizeListView(ListView<String> listView) {
-        ListView<String> lv = new ListView<>();
-        lv.setCellFactory(lst ->
-                new ListCell<String>() {
-                    @Override
-                    protected void updateItem(String item, boolean empty) {
-                        super.updateItem(item, empty);
-                        if (empty) {
-                            setPrefHeight(70);
-                            setText(null);
-                        } else {
-                            setPrefHeight(70);
-                            setText(item);
-                        }
-                    }
-                });
-    }
-    */
-
 
 
     private void initVal() throws IOException {
@@ -124,9 +101,9 @@ public class GameController implements Initializable {
     }
 
     private void endGame() throws IOException {
-        App.getGameEngine().setGame(null);
         App.getGameEngine().getSave().removeGame(game);
-        switchToMenu();
+        App.getGameEngine().setVictory(false);
+        App.setRoot("endGame");
     }
 
     @FXML
