@@ -73,6 +73,7 @@ public class GameController implements Initializable {
         if (globalSatisfaction <= 0) endGame();
 
         listViewGame.getItems().addAll(game.getCalamity().getChoicesDisplay());
+        textCalamities.setText(game.getCalamity().getName() + ": " + game.getCalamity().getDescription());
         updateText();
     }
 
@@ -83,7 +84,6 @@ public class GameController implements Initializable {
         textFood.setText("Food: " + game.getIsland(0).getStockFood());
         textSeason.setText("Season: " + game.getSeasonType());
         textScore.setText("Score: " + game.getIsland(0).getScore());
-        textCalamities.setText(game.getCalamity().getName() + ": " + game.getCalamity().getDescription());
         textSatisfactionGlobal.setText("Global satisfaction: " + game.getIsland(0).getGlobalSatisfaction());
         textCitizen.setText("Citizen: " + game.getIsland(0).getCitizen());
     }
@@ -125,6 +125,7 @@ public class GameController implements Initializable {
         listViewGame.getItems().removeAll();
         listViewGame.getItems().clear();
 
+        textCalamities.setText("Its the end of year, buy as you want !");
 
         listViewGame.getItems().add("food = 8$");
         for(Faction faction:App.getGameEngine().getGame().getIsland(0).getFactions()){
