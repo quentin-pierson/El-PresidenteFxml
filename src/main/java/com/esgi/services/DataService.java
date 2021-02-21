@@ -26,7 +26,7 @@ public class DataService {
     public DataService() {
         DataManagement dataManagement = new DataManagement();
         calamities = dataManagement.deserializeListCalamity(pathCalamities);
-        //campaigns = dataManagement.deserializeListCampaign(pathCampaigns);
+        campaigns = dataManagement.deserializeListCampaign(pathCampaigns);
     }
 
     public Calamity getCalamity() {

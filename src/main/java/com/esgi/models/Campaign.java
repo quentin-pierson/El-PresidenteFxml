@@ -39,7 +39,7 @@ public class Campaign extends Game{
             island.setGlobalSatisfaction();
         }
 
-        if(progression == calamities.size()){
+        if(progression != calamities.size()){
             calamity = calamities.get(progression);
             progression++;
             return true;

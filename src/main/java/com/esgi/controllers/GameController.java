@@ -70,7 +70,7 @@ public class GameController implements Initializable {
 
         float globalSatisfaction = game.getIsland(0).getGlobalSatisfaction();
 
-        if (globalSatisfaction <= 0) endGame();
+        if (globalSatisfaction <= 0) endGame(false);
 
         listViewGame.getItems().addAll(game.getCalamity().getChoicesDisplay());
         textCalamities.setText(game.getCalamity().getName() + ": " + game.getCalamity().getDescription());
@@ -107,7 +107,10 @@ public class GameController implements Initializable {
             addChat(text);
 
             App.getGameEngine().getGame().getIsland(0).choseChoice(choice);
-            game.setCalamity();
+            if(!game.setCalamity()){
+                endGame(true);
+            }
+
             if(game.getSeason()==0){
                 initEndYear();
             }
@@ -157,9 +160,9 @@ public class GameController implements Initializable {
         listViewChat.getItems().add(text);
     }
 
-    private void endGame() throws IOException {
+    private void endGame(Boolean victory) throws IOException {
         App.getGameEngine().getSave().removeGame(game);
-        App.getGameEngine().setVictory(false);
+        App.getGameEngine().setVictory(victory);
         App.setRoot("endGame");
     }
 

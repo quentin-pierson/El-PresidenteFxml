@@ -19,7 +19,8 @@ public class CreateGameController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        App.getGameEngine().createGame();
+       App.getGameEngine().createGame();
+
     }
 
     @FXML
