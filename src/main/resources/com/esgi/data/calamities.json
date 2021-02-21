@@ -1,23 +1,23 @@
 [ {
   "id" : 0,
-  "type" : "calamity",
-  "name" : "Calamity Test",
-  "description" : "a tsunami in city arrive",
+  "type" : "calamityWinter",
+  "name" : "kidnapped",
+  "description" : "An inhabitant has just been kidnapped: ",
   "choices" : [ {
-      "description" : "lets continue",
+      "description" : "Country the ransom to recover it",
       "calamityChild" : -1,
       "effects" : [{
-        "action" : 10,
-        "nationType" : "capitalist"
+        "action" : -5,
+        "nationType" : "treasury"
       }, {
           "action" : -10,
-          "nationType" : "religious"
+          "nationType" : "militarist"
         }, {
         "action" : -10,
-        "nationType" : "environmentalist"
+        "nationType" : "nationalist"
       }]
   },{
-    "description" : "Build a wall",
+    "description" : "Try to look for it",
     "calamityChild" : -1,
     "effects" : [{
       "action" : -10,
@@ -33,7 +33,7 @@
       "nationType" : "industry"
     }]
   },{
-    "description" : "Pray god",
+    "description" : "Strengthening the security of the island",
     "calamityChild" : -1,
     "effects" : [{
       "action" : -10,
@@ -46,7 +46,7 @@
       "nationType" : "environmentalist"
     }]
   },{
-    "description" : "Repair all when is over",
+    "description" : "We do nothing and let him die",
     "calamityChild" : -1,
     "effects" : [{
       "action" : 10,
@@ -65,11 +65,11 @@
   ]
 },{
   "id" : 2,
-  "type" : "calamity",
-  "name" : "Calamity Test",
-  "description" : "OKAY LETS GO",
+  "type" : "calamitySpring",
+  "name" : "Children",
+  "description" : "Children no longer want to go to school because the school is no longer up too standard",
   "choices" : [ {
-    "description" : "lets continue",
+    "description" : "Bringing the school up to standard",
     "calamityChild" : -1,
     "effects" : [{
       "action" : 10,
@@ -82,7 +82,7 @@
       "nationType" : "environmentalist"
     }]
   },{
-    "description" : "Build a wall",
+    "description" : "Bringing the school up to standard",
     "calamityChild" : -1,
     "effects" : [{
       "action" : -10,
@@ -98,7 +98,7 @@
       "nationType" : "industry"
     }]
   },{
-    "description" : "Pray god",
+    "description" : "Leaving the school in its present state",
     "calamityChild" : -1,
     "effects" : [{
       "action" : -10,
@@ -111,7 +111,7 @@
       "nationType" : "environmentalist"
     }]
   },{
-    "description" : "Repair all when is over",
+    "description" : "Dance you Children",
     "calamityChild" : -1,
     "effects" : [{
       "action" : 10,
@@ -128,4 +128,519 @@
     }]
   }
   ]
-}]
+},
+  {
+    "id" : 3,
+    "type" : "calamityWinter",
+    "name" : "Frost",
+    "description" : "A This week it is -30",
+    "choices" : [ {
+      "description" : "Warn people to be prepared",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : 10,
+        "nationType" : "capitalist"
+      }, {
+        "action" : -10,
+        "nationType" : "religious"
+      }, {
+        "action" : -10,
+        "nationType" : "environmentalist"
+      }]
+    },{
+      "description" : "Bringing food and data to the population",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : -10,
+        "nationType" : "capitalist"
+      }, {
+        "action" : 10,
+        "nationType" : "religious"
+      }, {
+        "action" : 10,
+        "nationType" : "environmentalist"
+      }, {
+        "action" : 10,
+        "nationType" : "industry"
+      }]
+    },{
+      "description" : "Bringing back equipment for the most destitute",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : -10,
+        "nationType" : "capitalist"
+      }, {
+        "action" : 10,
+        "nationType" : "religious"
+      }, {
+        "action" : -10,
+        "nationType" : "communism"
+      }]
+    },{
+      "description" : "The people manage they are great",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : 10,
+        "nationType" : "capitalist"
+      }, {
+        "action" : -10,
+        "nationType" : "nationalist"
+      }, {
+        "action" : -10,
+        "nationType" : "loyalist"
+      }, {
+        "action" : 10,
+        "nationType" : "industry"
+      }]
+    }
+    ]
+  },
+  {
+    "id" : 4,
+    "type" : "calamity",
+    "name" : "Brothel",
+    "description" : "A brothel has just opened:",
+    "choices" : [ {
+      "description" : "Close it and pursue the creators",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : -10,
+        "nationType" : "capitalist"
+      }, {
+        "action" : 10,
+        "nationType" : "religious"
+      }, {
+        "action" : -5,
+        "nationType" : "militarist"
+      }]
+    },{
+      "description" : "Advertise this house for the well-being of the people",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : 2,
+        "nationType" : "royalist"
+      }, {
+        "action" : -5,
+        "nationType" : "religious"
+      }, {
+        "action" : 10,
+        "nationType" : "liberals"
+      }]
+    },{
+      "description" : "Make discounts on them",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : -4,
+        "nationType" : "agriculture"
+      }, {
+        "action" : -4,
+        "nationType" : "capitalist"
+      }, {
+        "action" : 4,
+        "nationType" : "militarist"
+      }]
+    },{
+      "description" : "Leave it open",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : -7,
+        "nationType" : "feminism"
+      }, {
+        "action" : -2,
+        "nationType" : "nationalist"
+      }, {
+        "action" : -4,
+        "nationType" : "loyalist"
+      }, {
+        "action" : 7,
+        "nationType" : "industry"
+      }]
+    }
+    ]
+  },
+  {
+    "id" : 5,
+    "type" : "calamityAutumn",
+    "name" : "Dream Party",
+    "description" : "A dream party has just begun",
+    "choices" : [ {
+      "description" : "Calling the Army",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : 12,
+        "nationType" : "militarist"
+      }, {
+        "action" : -6,
+        "nationType" : "agriculture"
+      }, {
+        "action" : 4,
+        "nationType" : "liberals"
+      }]
+    },{
+      "description" : "Selling drugs",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : -12,
+        "nationType" : "treasury"
+      }, {
+        "action" : 10,
+        "nationType" : "religious"
+      }, {
+        "action" : 3,
+        "nationType" : "nationalist"
+      }, {
+        "action" : 8,
+        "nationType" : "industry"
+      }]
+    },{
+      "description" : "Telling people to go dancing",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : 2,
+        "nationType" : "capitalist"
+      }, {
+        "action" : 10,
+        "nationType" : "religious"
+      }, {
+        "action" : -10,
+        "nationType" : "environmentalist"
+      }]
+    },{
+      "description" : "Go smoke hookah",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : 4,
+        "nationType" : "communism"
+      }, {
+        "action" : 3,
+        "nationType" : "nationalist"
+      }, {
+        "action" : -10,
+        "nationType" : "loyalist"
+      }, {
+        "action" : -4,
+        "nationType" : "industry"
+      }]
+    }
+    ]
+  },
+  {
+    "id" : 6,
+    "type" : "calamitySummer",
+    "name" : "Fire",
+    "description" : "There is a fire",
+    "choices" : [ {
+      "description" : "Extinguishing the fire",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : 5,
+        "nationType" : "environmentalist"
+      }, {
+        "action" : -7,
+        "nationType" : "communism"
+      }, {
+        "action" : -2,
+        "nationType" : "religious"
+      }]
+    },{
+      "description" : "Telling people to stay away from the flames",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : 4,
+        "nationType" : "feminism"
+      }, {
+        "action" : 7,
+        "nationType" : "environmentalist"
+      }]
+    },{
+      "description" : "Let the people die because too many people",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : -8,
+        "nationType" : "industry"
+      }, {
+        "action" : -5,
+        "nationType" : "religious"
+      }, {
+        "action" : 3,
+        "nationType" : "royalist"
+      },
+        {
+          "action": 3,
+          "nationType": "feminism"
+        }]
+    },{
+      "description" : "Asking for help",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : 3,
+        "nationType" : "militarist"
+      }, {
+        "action" : 3,
+        "nationType" : "agriculture"
+      }, {
+        "action" : 3,
+        "nationType" : "industry"
+      }]
+    }
+    ]
+  },
+  {
+    "id" : 7,
+    "type" : "calamitySummer",
+    "name" : "Hot",
+    "description" : "It is very hot at the moment and there is a shortage of water",
+    "choices" : [ {
+      "description" : "Taking water from the lake but the people risk dying",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : 10,
+        "nationType" : "capitalist"
+      }, {
+        "action" : -10,
+        "nationType" : "religious"
+      }, {
+        "action" : -10,
+        "nationType" : "environmentalist"
+      }]
+    },{
+      "description" : "Buy some from other citizens",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : -10,
+        "nationType" : "capitalist"
+      }, {
+        "action" : 10,
+        "nationType" : "religious"
+      }, {
+        "action" : 10,
+        "nationType" : "environmentalist"
+      }, {
+        "action" : 10,
+        "nationType" : "industry"
+      }]
+    },{
+      "description" : "Leaving people to fend for themselves",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : -10,
+        "nationType" : "agriculture"
+      }, {
+        "action" : 10,
+        "nationType" : "religious"
+      }, {
+        "action" : -10,
+        "nationType" : "environmentalist"
+      }]
+    },{
+      "description" : "All solutions",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : 10,
+        "nationType" : "capitalist"
+      }, {
+        "action" : -10,
+        "nationType" : "nationalist"
+      }, {
+        "action" : -10,
+        "nationType" : "loyalist"
+      }, {
+        "action" : 10,
+        "nationType" : "industry"
+      }]
+    }
+    ]
+  },
+  {
+    "id" : 8,
+    "type" : "calamity",
+    "name" : "revolt ",
+    "description" : "Women revolt",
+    "choices" : [ {
+      "description" : "Do as the politicians do and ignore them",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : -12,
+        "nationType" : "feminism"
+      }, {
+        "action" : 5,
+        "nationType" : "militarist"
+      }, {
+        "action" : 1,
+        "nationType" : "communism"
+      }]
+    },{
+      "description" : "Listen to their word ",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : 8,
+        "nationType" : "feminism"
+      }, {
+        "action" : -5,
+        "nationType" : "militarist"
+      }, {
+        "action" : 3,
+        "nationType" : "religious"
+      }, {
+        "action" : -5,
+        "nationType" : "liberals"
+      }]
+    },{
+      "description" : "Silencing them by imprisoning them",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : 11,
+        "nationType" : "militarist"
+      }, {
+        "action" : 3,
+        "nationType" : "capitalist"
+      }, {
+        "action" : -10,
+        "nationType" : "environmentalist"
+      }]
+    },{
+      "description" : "She breaks them to us shouting for nothing.",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : 10,
+        "nationType" : "capitalist"
+      }, {
+        "action" : -10,
+        "nationType" : "nationalist"
+      }, {
+        "action" : -10,
+        "nationType" : "loyalist"
+      }, {
+        "action" : 10,
+        "nationType" : "industry"
+      }]
+    }
+    ]
+  },
+  {
+    "id" : 9,
+    "type" : "calamitySpring",
+    "name" : "Dam",
+    "description" : "The dam seems to be deteriorating",
+    "choices" : [ {
+      "description" : "Repairing it ",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : 10,
+        "nationType" : "capitalist"
+      }, {
+        "action" : -10,
+        "nationType" : "religious"
+      }, {
+        "action" : -10,
+        "nationType" : "environmentalist"
+      }]
+    },{
+      "description" : "Check the installation",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : -10,
+        "nationType" : "capitalist"
+      }, {
+        "action" : 10,
+        "nationType" : "religious"
+      }, {
+        "action" : 10,
+        "nationType" : "environmentalist"
+      }, {
+        "action" : 10,
+        "nationType" : "industry"
+      }]
+    },{
+      "description" : "Wait a little",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : -10,
+        "nationType" : "agriculture"
+      }, {
+        "action" : 10,
+        "nationType" : "religious"
+      }, {
+        "action" : -10,
+        "nationType" : "environmentalist"
+      }]
+    },{
+      "description" : "Destroy it ",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : 10,
+        "nationType" : "capitalist"
+      }, {
+        "action" : -10,
+        "nationType" : "nationalist"
+      }, {
+        "action" : -10,
+        "nationType" : "loyalist"
+      }, {
+        "action" : 10,
+        "nationType" : "industry"
+      }]
+    }
+    ]
+  },
+  {
+    "id" : 10,
+    "type" : "calamity",
+    "name" : "Hacker",
+    "description" : "A hacker is trying to hack into the city",
+    "choices" : [ {
+      "description" : "Reinforcing IT security",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : 6,
+        "nationType" : "capitalist"
+      }, {
+        "action" : 6,
+        "nationType" : "capitalist"
+      }, {
+        "action" : -5,
+        "nationType" : "militarist"
+      }]
+    },{
+      "description" : "Disconnect the machine from the power supply without turning it off.",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : -10,
+        "nationType" : "capitalist"
+      }, {
+        "action" : 10,
+        "nationType" : "religious"
+      }, {
+        "action" : 10,
+        "nationType" : "environmentalist"
+      }, {
+        "action" : 10,
+        "nationType" : "industry"
+      }]
+    },{
+      "description" : "Trying to counter it",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : 4,
+        "nationType" : "militarist"
+      }, {
+        "action" : -5,
+        "nationType" : "religious"
+      }, {
+        "action" : -1,
+        "nationType" : "capitalist"
+      }]
+    },{
+      "description" : "Pay the ransom",
+      "calamityChild" : -1,
+      "effects" : [{
+        "action" : 4,
+        "nationType" : "feminism"
+      }, {
+        "action" : -10,
+        "nationType" : "treasury"
+      }]
+    }
+    ]
+  }
+]
