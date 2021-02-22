@@ -4,8 +4,19 @@ import com.esgi.models.Calamities.Calamity;
 import com.esgi.models.Calamities.SeasonType;
 import com.esgi.services.DataService;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 import java.util.ArrayList;
+
+@JsonTypeInfo(
+        use = JsonTypeInfo.Id.NAME,
+        include = JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = Game.class, name = "game"),
+        @JsonSubTypes.Type(value = Campaign.class, name = "campaign")
+})
 
 @JsonIgnoreProperties({"difficulty", "seasonType"})
 public class Game {

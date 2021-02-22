@@ -25,11 +25,15 @@ public class LoadGameController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         for (Game game : App.getGameEngine().getSave().getGames()) {
-            if(App.getGameType() == game.getGameType()){
-                listViewGame.getItems().add(game.toString());
-                gameId.add(game.getId());
+            try{
+                if(App.getGameType() == game.getGameType()){
+                    listViewGame.getItems().add(game.toString());
+                    gameId.add(game.getId());
+                }
             }
+            catch (Exception e){
 
+            }
         }
     }
 
