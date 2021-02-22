@@ -163,13 +163,13 @@ public class Island {
     //FAIRE UN ALGO POUR QUE CA NE SOIT PAS ALEATOIRE
     private void growCitizen() {
         Random random = new Random();
-        int percentCitizenTotal = random.nextInt(10) + 101;
+        double percentCitizenTotal = random.nextInt(10) + 101;
 
-        int newCitizen = getCitizen() * percentCitizenTotal / 100;
+        double newCitizen = (getCitizen() * percentCitizenTotal / 100)-getCitizen();
 
-        while (stockFood < 0) {
+        while (newCitizen > 0) {
             int rnd = random.nextInt(factions.size());
-            int supporter = random.nextInt(newCitizen) + 1;
+            int supporter = random.nextInt((int)newCitizen) + 1;
 
             factions.get(rnd).addSupporter(supporter);
             newCitizen -= supporter;
